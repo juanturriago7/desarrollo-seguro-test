@@ -1,0 +1,22 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Dependencias y artefactos (por si más adelante se añade un paso de build)
+node_modules/
+dist/
+.cache/
+
+# Netlify
+.netlify/
+
+# Entorno
+.env
+.env.*

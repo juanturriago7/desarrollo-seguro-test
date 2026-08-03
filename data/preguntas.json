@@ -1,0 +1,1502 @@
+[
+  {
+    "id": 1,
+    "tema": "ingenieria-social",
+    "pregunta": "¿Qué busca un ataque de \"Whaling\"?",
+    "opciones": [
+      "Comprometer a objetivos de alto perfil o ejecutivos (C-Level) mediante ingeniería social muy sofisticada.",
+      "Atacar servidores con grandes bases de datos.",
+      "Enviar spam masivo a listas de correo muy grandes.",
+      "Saturar un servicio con tráfico distribuido (DDoS)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 2,
+    "tema": "criptografia",
+    "pregunta": "Una aplicación utiliza una clave de cifrado fija en el código: CLAVE = \"MySuperSecretKey\". ¿Cuál es el principal problema de seguridad?",
+    "opciones": [
+      "Uso de clave hardcodeada: vulnerabilidad crítica si se decompila la app.",
+      "El algoritmo de cifrado es demasiado lento.",
+      "La clave es demasiado larga para ser eficiente.",
+      "No representa ningún problema de seguridad real."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 3,
+    "tema": "logging-errores",
+    "pregunta": "¿Cuál es el propósito de realizar \"Threat Hunting\" (Caza de Amenazas) proactivamente?",
+    "opciones": [
+      "Buscar activamente indicadores de compromiso (IoCs) o actividades maliciosas que no han sido detectadas por las herramientas automatizadas.",
+      "Reemplazar por completo la necesidad de tener un SIEM.",
+      "Desarrollar parches de seguridad para vulnerabilidades zero-day.",
+      "Realizar únicamente pruebas de penetración programadas."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 4,
+    "tema": "validacion-entradas",
+    "pregunta": "¿Por qué depender únicamente de la validación de entradas en el lado del cliente (frontend) es insuficiente?",
+    "opciones": [
+      "Porque puede ser eludida (bypassed) fácilmente interceptando la petición; la seguridad real debe estar en el backend.",
+      "Porque los navegadores antiguos no la soportan.",
+      "Porque consume demasiados datos móviles.",
+      "Porque hace más lento el renderizado de la página."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 5,
+    "tema": "logging-errores",
+    "pregunta": "¿Qué buena práctica se debe seguir al manejar errores en una aplicación segura?",
+    "opciones": [
+      "Registrar los errores detallados en logs seguros y mostrar mensajes genéricos al usuario.",
+      "Mostrar el stack trace completo al usuario final.",
+      "Ignorar los errores considerados menores.",
+      "Almacenar los errores en el almacenamiento local del cliente."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 6,
+    "tema": "ingenieria-social",
+    "pregunta": "¿Qué técnica de Ingeniería Social utiliza llamadas telefónicas para engañar a la víctima y obtener información confidencial?",
+    "opciones": [
+      "Vishing (Voice Phishing).",
+      "Smishing (SMS Phishing).",
+      "Phishing por correo electrónico.",
+      "Dumpster Diving."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 7,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Cuál es el objetivo principal de una \"Matriz de Trazabilidad de Requisitos de Seguridad\"?",
+    "opciones": [
+      "Asegurar que cada requisito de seguridad esté vinculado a casos de uso, código y pruebas que lo verifiquen.",
+      "Identificar a los desarrolladores que escribieron cada línea de código.",
+      "Rastrear la ubicación física de los servidores.",
+      "Medir el tiempo de respuesta de la base de datos."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 8,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Cuál es el objetivo principal del ciclo de vida de desarrollo seguro (S-SDLC)?",
+    "opciones": [
+      "Integrar la seguridad en todas las fases del ciclo de vida del software.",
+      "Aumentar únicamente la velocidad de desarrollo.",
+      "Reducir los costos de infraestructura.",
+      "Cumplir únicamente con auditorías externas."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 9,
+    "tema": "principios-diseno",
+    "pregunta": "¿Qué requisito de seguridad asegura que una entidad no pueda negar la autoría de una acción realizada (ej. firma de un contrato)?",
+    "opciones": [
+      "No repudio.",
+      "Autorización.",
+      "Confidencialidad.",
+      "Disponibilidad."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 10,
+    "tema": "sdlc-amenazas",
+    "pregunta": "Durante la fase de requisitos de un S-SDLC, ¿cuál es la actividad de seguridad más relevante para prevenir fallos de diseño costosos?",
+    "opciones": [
+      "Realizar un modelado de amenazas inicial basado en los casos de uso y requerimientos funcionales.",
+      "Configurar firewalls de red perimetrales.",
+      "Escribir pruebas unitarias para cada función.",
+      "Implementar pruebas de penetración automatizadas."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 11,
+    "tema": "arquitectura-datos",
+    "pregunta": "¿Qué patrón de diseño de seguridad reduce la superficie de ataque canalizando todas las solicitudes a través de un único punto de entrada y validación?",
+    "opciones": [
+      "Intercepting Filter / API Gateway centralizado.",
+      "Modelo Vista Controlador (MVC).",
+      "Singleton.",
+      "Active Record."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 12,
+    "tema": "malware-red",
+    "pregunta": "¿Qué tipo de malware se disfraza como software legítimo pero realiza acciones maliciosas una vez ejecutado?",
+    "opciones": [
+      "Troyano (Trojan Horse).",
+      "Adware.",
+      "Spyware.",
+      "Ransomware."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 13,
+    "tema": "malware-red",
+    "pregunta": "¿Qué ataque intenta agotar los recursos de un servidor enviando un gran volumen de tráfico malicioso desde una única fuente?",
+    "opciones": [
+      "Denegación de Servicio (DoS).",
+      "Denegación de Servicio Distribuido (DDoS).",
+      "Man-in-the-Middle (MitM).",
+      "Inyección SQL."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 14,
+    "tema": "principios-diseno",
+    "pregunta": "¿Qué describe la \"Economía de Mecanismos\" como principio de diseño seguro?",
+    "opciones": [
+      "Mantener el diseño de seguridad lo más simple y pequeño posible, ya que los diseños complejos son más propensos a errores.",
+      "Basar la seguridad en algoritmos públicamente conocidos (Diseño Abierto).",
+      "Asegurar que todos los accesos sean mediados por un control centralizado (Mediación Completa).",
+      "Utilizar múltiples mecanismos redundantes (Defensa en Profundidad)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 15,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "¿Qué técnica utiliza un atacante en un ataque de \"Credential Stuffing\"?",
+    "opciones": [
+      "Probar credenciales robadas de otras brechas de datos, aprovechando la reutilización de contraseñas.",
+      "Explotar una inyección SQL para extraer hashes de contraseñas.",
+      "Interceptar contraseñas enviadas sobre HTTP.",
+      "Adivinar contraseñas usando únicamente listas de palabras comunes."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 16,
+    "tema": "seguridad-web",
+    "pregunta": "¿Qué ataque podría prevenirse usando la cabecera HTTP \"X-Content-Type-Options: nosniff\"?",
+    "opciones": [
+      "Ataques de MIME Sniffing, donde el navegador adivina el tipo de contenido ignorando la cabecera Content-Type.",
+      "Fuga de información a través de la cabecera \"Server\".",
+      "Cross-Site Scripting (XSS) reflejado.",
+      "Clickjacking."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 17,
+    "tema": "validacion-entradas",
+    "pregunta": "¿Por qué no se debe depender únicamente de la validación del lado del cliente?",
+    "opciones": [
+      "Porque puede ser fácilmente manipulada o deshabilitada por el usuario.",
+      "Porque hace más lento el procesamiento del servidor.",
+      "Porque genera errores de compatibilidad entre navegadores.",
+      "Porque aumenta el consumo de recursos del servidor."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 18,
+    "tema": "inyeccion",
+    "pregunta": "Un código construye una consulta con concatenación: query = \"SELECT * FROM users WHERE id = '\" + id_usuario + \"'\". ¿Cuál es la vulnerabilidad y su solución?",
+    "opciones": [
+      "Inyección SQL; solución: usar Sentencias Preparadas (Prepared Statements) o consultas parametrizadas.",
+      "Cross-Site Scripting (XSS); solución: usar codificación de salida HTML.",
+      "Inyección de Comandos; solución: evitar llamadas al sistema operativo.",
+      "Path Traversal; solución: validar que no contenga \"../\"."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 19,
+    "tema": "control-acceso",
+    "pregunta": "¿Qué tipo de prueba de seguridad verifica que los usuarios solo puedan acceder a los recursos para los que están autorizados?",
+    "opciones": [
+      "Pruebas de Control de Acceso / Autorización.",
+      "Pruebas de Inyección.",
+      "Pruebas de Gestión de Sesión.",
+      "Pruebas de Criptografía."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 20,
+    "tema": "pruebas-seguridad",
+    "pregunta": "Compare SAST y SCA en términos de lo que analizan.",
+    "opciones": [
+      "SAST analiza el código fuente propio; SCA analiza las librerías de terceros (dependencias).",
+      "SAST analiza la red; SCA analiza la base de datos.",
+      "SAST es dinámico; SCA es estático.",
+      "Ambas técnicas hacen exactamente lo mismo."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 21,
+    "tema": "criptografia",
+    "pregunta": "¿Qué técnica criptográfica produce una salida de longitud fija a partir de una entrada variable, siendo inviable revertir la entrada original?",
+    "opciones": [
+      "Función Hash Criptográfica (ej. SHA-256).",
+      "Cifrado Asimétrico (ej. RSA).",
+      "Cifrado Simétrico (ej. AES).",
+      "Esteganografía."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 22,
+    "tema": "pruebas-seguridad",
+    "pregunta": "En pruebas de seguridad, ¿qué significa \"Fuzzing\"?",
+    "opciones": [
+      "Una técnica automatizada que proporciona datos inválidos, inesperados o aleatorios como entrada para detectar fallos o vulnerabilidades.",
+      "Un análisis de las dependencias de terceros.",
+      "Una revisión manual detallada del código fuente.",
+      "Un escaneo que solo sigue enlaces y envía payloads conocidos."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 23,
+    "tema": "arquitectura-datos",
+    "pregunta": "En una transacción compleja, ¿cómo puede un mal uso de SAVEPOINT y ROLLBACK TO SAVEPOINT causar pérdida de integridad?",
+    "opciones": [
+      "Permitiendo que la parte de \"ganar puntos\" se confirme, pero la parte de \"pagar producto\" se revierta, generando puntos sin compra.",
+      "Haciendo ROLLBACK de toda la transacción si los puntos no están disponibles.",
+      "Los SAVEPOINT bloquean la base de datos y causan DoS.",
+      "Los SAVEPOINT solo se usan para acelerar el COMMIT final."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 24,
+    "tema": "inyeccion",
+    "pregunta": "¿Qué ventaja principal ofrece el uso de \"Prepared Statements\" en la interacción con bases de datos?",
+    "opciones": [
+      "Previene eficazmente la Inyección SQL al separar el código SQL de los datos del usuario.",
+      "Permite ejecutar múltiples sentencias SQL en una sola llamada.",
+      "Elimina la necesidad de validar los tipos de datos.",
+      "Mejora el rendimiento de absolutamente todas las consultas."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 25,
+    "tema": "pruebas-seguridad",
+    "pregunta": "¿Cuál es el propósito de la herramienta OWASP ZAP (Zed Attack Proxy)?",
+    "opciones": [
+      "Actuar como proxy de intercepción y realizar escaneos de seguridad dinámicos (DAST) en aplicaciones web.",
+      "Verificar la seguridad de las dependencias de terceros (SCA).",
+      "Analizar el código fuente de forma estática (SAST).",
+      "Modelar amenazas durante la fase de diseño."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 26,
+    "tema": "validacion-entradas",
+    "pregunta": "Si un usuario ingresa \"100.00a\" en lugar de \"100.00\" en un campo de precio, ¿qué control previene esta corrupción de integridad \"sin dolo\"?",
+    "opciones": [
+      "Validación estricta del tipo de dato y formato (whitelist) en el backend.",
+      "Cifrado de la base de datos.",
+      "Autenticación Multifactor (MFA).",
+      "Uso de HTTPS."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 27,
+    "tema": "logging-errores",
+    "pregunta": "¿Qué requisito de auditoría (logging) es crítico para el análisis forense?",
+    "opciones": [
+      "Registrar eventos de éxito y fallo en autenticación/autorización, incluyendo \"Quién\", \"Qué\", \"Cuándo\" y \"Desde dónde\".",
+      "Registrar únicamente los errores del sistema.",
+      "No registrar nada para ahorrar espacio en disco.",
+      "Registrar las contraseñas en texto plano para su recuperación."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 28,
+    "tema": "seguridad-web",
+    "pregunta": "Un servidor usa la cabecera X-Frame-Options: \"SAMEORIGIN\". ¿Qué previene?",
+    "opciones": [
+      "Clickjacking, al impedir que la página se cargue en iframes externos.",
+      "Cross-Site Scripting (XSS).",
+      "Inyección SQL.",
+      "Denegación de Servicio (DoS)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 29,
+    "tema": "seguridad-web",
+    "pregunta": "Una app muestra comentarios interpretando HTML. Si un comentario contiene \"<img src=x onerror=alert('XSS')>\", ¿qué sucede?",
+    "opciones": [
+      "Se ejecuta el script (XSS reflejado/almacenado).",
+      "Se muestra el texto del script pero no se ejecuta.",
+      "Se produce un error de base de datos.",
+      "Nada, el navegador siempre lo bloquea."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 30,
+    "tema": "seguridad-web",
+    "pregunta": "¿Qué vulnerabilidad se explota en un ataque de \"HTTP Request Smuggling\"?",
+    "opciones": [
+      "La inconsistencia en la interpretación de límites de solicitud (Content-Length vs Transfer-Encoding) entre proxies y servidores backend.",
+      "El secuestro de una sesión HTTP válida usando un token robado.",
+      "La inyección de cabeceras HTTP adicionales para cache poisoning.",
+      "La falsificación de una solicitud desde el navegador de la víctima (CSRF)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 31,
+    "tema": "criptografia",
+    "pregunta": "En el desarrollo web seguro, ¿qué garantiza fundamentalmente el protocolo TLS/SSL?",
+    "opciones": [
+      "La confidencialidad e integridad de los datos en tránsito entre el cliente y el servidor.",
+      "Que el servidor verifique la identidad del cliente para evitar bots.",
+      "La no repudiación de las transacciones usando solo criptografía simétrica.",
+      "Cifrar los datos una sola vez antes de salir del cliente y nada más."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 32,
+    "tema": "seguridad-web",
+    "pregunta": "Un atacante pasa \"http://169.254.169.254/latest/meta-data/\" o \"http://localhost/admin\" a un parámetro que hace peticiones HTTP del servidor. ¿Qué vulnerabilidad explota?",
+    "opciones": [
+      "Server-Side Request Forgery (SSRF).",
+      "Client-Side Request Forgery.",
+      "Cross-Site Scripting (XSS).",
+      "Open Redirect (Redirección Abierta)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 33,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "¿Por qué guardar un token de sesión en localStorage es menos seguro que usar cookies con el atributo HttpOnly?",
+    "opciones": [
+      "Porque localStorage es accesible vía JavaScript, haciéndolo vulnerable a robo por XSS.",
+      "Porque localStorage se borra al cerrar el navegador.",
+      "Porque localStorage tiene mucha menos capacidad.",
+      "Porque las cookies son más rápidas de leer."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 34,
+    "tema": "movil",
+    "pregunta": "En seguridad móvil, ¿qué es el \"Swizzling\" de métodos (Objective-C/Swift) y por qué es un riesgo?",
+    "opciones": [
+      "Es una técnica que reemplaza la implementación de un método en tiempo de ejecución; un atacante puede usarla para interceptar llamadas sensibles.",
+      "Es la optimización automática de código que realiza el compilador.",
+      "Es un tipo de ofuscación que renombra variables.",
+      "Es una forma de gestionar la memoria en iOS."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 35,
+    "tema": "movil",
+    "pregunta": "¿Cuál es el riesgo si una app móvil almacena claves criptográficas en el código fuente o archivos de configuración no protegidos?",
+    "opciones": [
+      "Las claves pueden extraerse mediante ingeniería inversa del binario, comprometiendo todos los datos cifrados.",
+      "Las claves podrían entrar en conflicto con otras variables del sistema.",
+      "El tamaño del paquete de la aplicación aumentará considerablemente.",
+      "El rendimiento disminuirá por el acceso constante a las claves."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 36,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "En un flujo OAuth 2.0 (Authorization Code Grant), ¿cuál es un punto crítico de vulnerabilidad si no se implementa correctamente?",
+    "opciones": [
+      "Cross-Site Request Forgery (CSRF) en el paso de callback (falta del parámetro state).",
+      "Inyección SQL en el endpoint de autorización.",
+      "Cross-Site Scripting almacenado en el token.",
+      "Man-in-the-Middle inevitable en cualquier caso."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 37,
+    "tema": "api-seguridad",
+    "pregunta": "En OWASP API Security Top 10, ¿qué implica la \"Gestión Inadecuada del Inventario\" (Improper Inventory Management)?",
+    "opciones": [
+      "La falta de visibilidad y documentación sobre todas las APIs expuestas (versiones antiguas, endpoints olvidados, shadow APIs).",
+      "La falta de limitación de velocidad (Rate Limiting) en las APIs.",
+      "El almacenamiento inseguro de las claves API de los clientes.",
+      "El uso de un número excesivo de endpoints en una sola API."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 38,
+    "tema": "control-acceso",
+    "pregunta": "Según OWASP API Security Top 10, ¿qué vulnerabilidad ocurre cuando una API no valida si el usuario tiene permiso para acceder a un objeto específico?",
+    "opciones": [
+      "Broken Object Level Authorization (BOLA).",
+      "Broken Function Level Authorization.",
+      "Broken Authentication.",
+      "Broken Object Property Level Authorization."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 39,
+    "tema": "nube-contenedores",
+    "pregunta": "¿Cuál es el beneficio de seguridad de usar contenedores Docker con el flag \"--read-only\" para el sistema de archivos raíz?",
+    "opciones": [
+      "Previene modificaciones en el sistema de archivos en tiempo de ejecución, dificultando la persistencia de malware.",
+      "Permite al contenedor escribir logs en cualquier ubicación.",
+      "Facilita la actualización de paquetes dentro del contenedor en ejecución.",
+      "Mejora el rendimiento de lectura/escritura del contenedor."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 40,
+    "tema": "nube-contenedores",
+    "pregunta": "En la seguridad en la nube, ¿qué describe el \"Modelo de Responsabilidad Compartida\"?",
+    "opciones": [
+      "Define qué aspectos son responsabilidad del proveedor (seguridad \"de\" la nube) y cuáles del cliente (seguridad \"en\" la nube).",
+      "Un modelo donde toda la seguridad recae únicamente en el cliente.",
+      "Un modelo donde toda la seguridad la gestiona automáticamente el proveedor.",
+      "Un acuerdo legal que exime al proveedor de toda responsabilidad."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 41,
+    "tema": "ia-seguridad",
+    "pregunta": "En seguridad de IA, ¿qué implica la \"Robustez\" de un modelo?",
+    "opciones": [
+      "La capacidad de mantener su rendimiento incluso ante entradas inesperadas, ruidosas o adversariales.",
+      "El tamaño del modelo en parámetros o espacio en disco.",
+      "La velocidad con la que procesa nuevas entradas (latencia).",
+      "La facilidad para entender cómo toma sus decisiones (interpretabilidad)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 42,
+    "tema": "ia-seguridad",
+    "pregunta": "En seguridad de IA, ¿qué es el \"Aprendizaje Federado\" (Federated Learning)?",
+    "opciones": [
+      "Una técnica donde los datos permanecen en los dispositivos locales y solo las actualizaciones del modelo se envían a un servidor central.",
+      "Un método para entrenar modelos usando exclusivamente datos sintéticos generados centralmente.",
+      "Un sistema para auditar modelos de IA usando datos federales.",
+      "Una arquitectura donde múltiples modelos compiten entre sí."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 43,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Cuál es el propósito de las \"Historias de Usuario de Seguridad\" o \"Evil User Stories\" en metodologías ágiles?",
+    "opciones": [
+      "Visibilizar los requisitos de seguridad en el Backlog del producto para que sean priorizados y desarrollados.",
+      "Reemplazar por completo el modelado de amenazas.",
+      "Hacer el trabajo más difícil para los desarrolladores.",
+      "Documentar los bugs encontrados en producción."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 44,
+    "tema": "malware-red",
+    "pregunta": "¿Cuál es el propósito de un \"Honeypot\" en seguridad de redes?",
+    "opciones": [
+      "Actuar como señuelo intencionalmente vulnerable para atraer y estudiar a los atacantes, distrayéndolos de los sistemas reales.",
+      "Ser un servidor centralizado para recolectar logs de seguridad.",
+      "Realizar copias de seguridad automáticas de datos críticos.",
+      "Funcionar como un firewall avanzado con inteligencia artificial."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 45,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Qué define la etapa de \"Diseño\" en el SDLC seguro?",
+    "opciones": [
+      "La creación de la arquitectura, modelos de datos, interfaces y la planificación de controles de seguridad específicos.",
+      "La implementación de la aplicación en el entorno de producción.",
+      "La escritura del código fuente de la aplicación.",
+      "La evaluación de riesgos y definición de requisitos iniciales."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 46,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "Una aplicación genera IDs de sesión usando la hora actual del sistema en milisegundos. ¿Por qué es inseguro?",
+    "opciones": [
+      "Porque es predecible para un atacante (Session Guessing / Hijacking).",
+      "No es inseguro, porque la hora cambia siempre.",
+      "No es inseguro, porque el valor es demasiado corto.",
+      "Sí es seguro si además incluye milisegundos."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 47,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Cuál métrica de BCP/DRP define la cantidad máxima de pérdida de datos tolerable (medida en tiempo)?",
+    "opciones": [
+      "Recovery Point Objective (RPO).",
+      "Recovery Time Objective (RTO).",
+      "Service Level Agreement (SLA).",
+      "Maximum Tolerable Downtime (MTD)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 48,
+    "tema": "criptografia",
+    "pregunta": "¿Cuál es un error de implementación criptográfica común que lleva a vulnerabilidades?",
+    "opciones": [
+      "El uso de claves débiles o predecibles, o la mala gestión de las claves (como almacenarlas en texto plano).",
+      "Usar algoritmos demasiado modernos; los antiguos como DES son más seguros.",
+      "Reutilizar el mismo IV o nonce con la misma clave para acelerar el cifrado.",
+      "Almacenar las claves en el código fuente porque solo los desarrolladores acceden al repo."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 49,
+    "tema": "sdlc-amenazas",
+    "pregunta": "En el modelado de amenazas con DREAD, ¿qué evalúa la \"A\" (Affected Users)?",
+    "opciones": [
+      "La cantidad o porcentaje de usuarios que se verían afectados si la amenaza se materializa.",
+      "La facilidad para reproducir el ataque.",
+      "La facilidad con la que un atacante puede descubrir la vulnerabilidad.",
+      "El daño potencial total causado por la amenaza."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 50,
+    "tema": "malware-red",
+    "pregunta": "¿Qué tecnología permite crear una conexión cifrada y segura entre un dispositivo remoto y la red corporativa?",
+    "opciones": [
+      "Red Privada Virtual (VPN).",
+      "Balanceador de Carga (Load Balancer).",
+      "Firewall de Aplicación Web (WAF).",
+      "Sistema de Detección de Intrusos (IDS)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 51,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Qué representa un \"Activo\" en el contexto de la gestión de riesgos de seguridad?",
+    "opciones": [
+      "Cualquier recurso de valor para la organización que necesita ser protegido (datos, propiedad intelectual, reputación, sistemas).",
+      "Una amenaza potencial como un hacker o un malware.",
+      "Un control de seguridad implementado, como un firewall.",
+      "Una vulnerabilidad conocida en un sistema operativo."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 52,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "¿Qué práctica recomendada previene que un atacante use múltiples intentos para adivinar códigos de verificación (MFA/recuperación)?",
+    "opciones": [
+      "Implementar Rate Limiting (limitación de intentos) y CAPTCHA después de pocos intentos fallidos.",
+      "No registrar los intentos fallidos para no alertar al atacante.",
+      "Permitir que los códigos sean válidos durante varias horas.",
+      "Enviar códigos de verificación muy cortos de 4 dígitos."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 53,
+    "tema": "criptografia",
+    "pregunta": "¿Qué técnica criptográfica permite detectar cualquier modificación no autorizada de un documento o log?",
+    "opciones": [
+      "Función Hash Criptográfica (ej. SHA-256).",
+      "Cifrado Simétrico (ej. AES).",
+      "Compresión de datos (ej. ZIP).",
+      "Almacenamiento en la nube (ej. S3)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 54,
+    "tema": "criptografia",
+    "pregunta": "Una aplicación almacena contraseñas con: hash = MD5(password). ¿Cuál es el principal problema de seguridad?",
+    "opciones": [
+      "MD5 está criptográficamente roto y es rápido, fácil de crackear con rainbow tables.",
+      "MD5 es demasiado lento para producción.",
+      "MD5 no es compatible con caracteres UTF-8.",
+      "El hash resultante ocupa demasiado espacio."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 55,
+    "tema": "control-acceso",
+    "pregunta": "Un endpoint elimina usuarios sin verificar si el usuario logueado tiene permiso para borrar el ID solicitado. ¿Qué ataque se facilita?",
+    "opciones": [
+      "Escalada de privilegios / modificación de datos no autorizada.",
+      "Phishing.",
+      "Man-in-the-Middle en la conexión.",
+      "Denegación de Servicio por consumo de CPU."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 56,
+    "tema": "criptografia",
+    "pregunta": "Una app envía el token de reseteo de contraseña en la URL usando \"http\". ¿Cuál es el riesgo principal frente a \"https\"?",
+    "opciones": [
+      "Intercepción del token (sniffing) al viajar en texto plano por la red.",
+      "El token es demasiado corto.",
+      "El navegador bloqueará automáticamente la página.",
+      "El usuario no sabrá cómo usarlo."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 57,
+    "tema": "dependencias",
+    "pregunta": "Un desarrollador quiere usar una librería de terceros no actualizada en más de dos años. ¿Cuál es la acción más recomendable?",
+    "opciones": [
+      "Analizar vulnerabilidades conocidas con herramientas como OWASP Dependency-Check o Snyk antes de incluirla.",
+      "Clonar el repositorio y modificarlo manualmente para evitar dependencias externas.",
+      "Usar la librería porque sigue funcionando correctamente.",
+      "Revisar la reputación del autor y continuar si es confiable."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 58,
+    "tema": "inyeccion",
+    "pregunta": "¿Qué vulnerabilidad permite incluir un archivo local del servidor (ej. /etc/passwd) en la respuesta por validación insuficiente del nombre de archivo?",
+    "opciones": [
+      "Local File Inclusion (LFI).",
+      "Remote File Inclusion (RFI).",
+      "Path Traversal.",
+      "Server-Side Request Forgery (SSRF)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 59,
+    "tema": "seguridad-web",
+    "pregunta": "¿Cuál es el propósito de la cabecera HTTP \"Referrer-Policy\"?",
+    "opciones": [
+      "Controlar cuánta información de la URL de origen (referrer) se incluye en las solicitudes salientes, evitando fugas en las URLs.",
+      "Prevenir el Clickjacking, igual que X-Frame-Options.",
+      "Mitigar XSS reflejado, igual que X-XSS-Protection.",
+      "Forzar el uso de HTTPS, igual que HSTS."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 60,
+    "tema": "seguridad-web",
+    "pregunta": "¿Cuál es el propósito de la cabecera HTTP \"Content-Security-Policy\" (CSP)?",
+    "opciones": [
+      "Definir políticas que controlan qué recursos puede cargar el navegador, mitigando XSS y otros ataques de inyección.",
+      "Forzar el uso de HTTPS en todas las comunicaciones futuras.",
+      "Evitar que el navegador interprete archivos con un tipo MIME incorrecto.",
+      "Controlar qué información de referente se envía en las solicitudes."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 61,
+    "tema": "inyeccion",
+    "pregunta": "Con una consulta parametrizada: \"SELECT name FROM users WHERE userId = ?\" y el parámetro contiene \"0 OR 1=1 --\", ¿qué sucede?",
+    "opciones": [
+      "La entrada se trata estrictamente como dato literal, neutralizando el intento de inyección.",
+      "La base de datos arrojará un error de sintaxis SQL.",
+      "El sistema se bloqueará por seguridad.",
+      "Se ejecutará la inyección y devolverá todos los usuarios."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 62,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "¿Cuál práctica debe aplicarse al diseñar un flujo de autenticación seguro?",
+    "opciones": [
+      "Implementar autenticación multifactor (MFA) y expiración de sesión.",
+      "Almacenar las contraseñas en cookies del cliente.",
+      "Usar tokens de sesión permanentes que nunca expiran.",
+      "Permitir la autenticación basada únicamente en la dirección IP."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 63,
+    "tema": "inyeccion",
+    "pregunta": "Una app ejecuta: comando = \"LISTAR_ARCHIVOS \" + directorio, con \"directorio\" tomado de la URL. ¿Qué vulnerabilidad introduce?",
+    "opciones": [
+      "Inyección de Comandos del Sistema Operativo (OS Command Injection).",
+      "Inyección SQL.",
+      "Path Traversal.",
+      "Cross-Site Scripting (XSS)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 64,
+    "tema": "validacion-entradas",
+    "pregunta": "Al permitir la subida de imágenes de perfil, ¿cómo se mitigan las vulnerabilidades de forma segura?",
+    "opciones": [
+      "Cambiando el nombre del archivo y validando el tipo MIME real y el contenido (Magic Bytes).",
+      "Guardando el archivo en la misma carpeta del código fuente.",
+      "Comprimiendo el archivo antes de guardarlo.",
+      "Validando solamente la extensión del archivo."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 65,
+    "tema": "seguridad-web",
+    "pregunta": "¿Qué describe mejor un ataque de \"Clickjacking\"?",
+    "opciones": [
+      "Engañar al usuario para que haga clic en algo distinto a lo que percibe, superponiendo elementos invisibles (iframes) sobre la interfaz legítima.",
+      "Inyectar scripts maliciosos en una página web (XSS).",
+      "Forzar al navegador a realizar solicitudes no deseadas (CSRF).",
+      "Secuestrar la sesión del usuario robando sus cookies."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 66,
+    "tema": "criptografia",
+    "pregunta": "¿Cuál mecanismo protege mejor la integridad de los datos transmitidos entre cliente y servidor?",
+    "opciones": [
+      "HTTPS/TLS.",
+      "Un token JWT sin firma.",
+      "Compresión de datos.",
+      "Hashing con MD5."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 67,
+    "tema": "dependencias",
+    "pregunta": "¿Qué categoría del OWASP Top 10 2021 cubre los fallos de integridad en la cadena de suministro de software (firmas no verificadas, CI/CD comprometido)?",
+    "opciones": [
+      "A08:2021 - Software and Data Integrity Failures.",
+      "A05:2021 - Security Misconfiguration.",
+      "A06:2021 - Vulnerable and Outdated Components.",
+      "A02:2021 - Cryptographic Failures."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 68,
+    "tema": "movil",
+    "pregunta": "¿Qué información sensible podría filtrarse si una app móvil no deshabilita las funciones de depuración en producción?",
+    "opciones": [
+      "Claves API, tokens, datos internos, endpoints privados y lógica de negocio detallada.",
+      "Solo la versión del sistema operativo del dispositivo.",
+      "Únicamente el identificador único del dispositivo (IMEI/UDID).",
+      "Solo mensajes de error genéricos del sistema operativo."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 69,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "¿Cuál es el riesgo principal de no implementar \"Rate Limiting\" en una API de autenticación o recuperación de contraseña?",
+    "opciones": [
+      "Facilita ataques de Fuerza Bruta y Credential Stuffing al permitir intentos ilimitados en poco tiempo.",
+      "Aumenta la latencia promedio de respuesta de la API.",
+      "Requiere almacenar hashes de contraseñas más complejos.",
+      "Impide que usuarios con conexiones lentas inicien sesión."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 70,
+    "tema": "api-seguridad",
+    "pregunta": "¿Qué técnica de seguridad de API añade una firma digital a las solicitudes usando la clave privada del cliente, verificable con su clave pública?",
+    "opciones": [
+      "Firma de Solicitudes (Request Signing).",
+      "Autenticación Básica (Basic Auth) sobre HTTPS.",
+      "Uso de tokens JWT firmados por el servidor.",
+      "Autenticación mediante API Key en la cabecera."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 71,
+    "tema": "inyeccion",
+    "pregunta": "En una API REST, un desarrollador concatena parámetros directamente en una consulta SQL. ¿Cuál es la medida más adecuada?",
+    "opciones": [
+      "Usar consultas parametrizadas o un ORM con binding de variables.",
+      "Implementar autenticación basada en tokens JWT.",
+      "Configurar un firewall de aplicaciones (WAF).",
+      "Escapar manualmente los caracteres especiales en la cadena."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 72,
+    "tema": "ia-seguridad",
+    "pregunta": "En seguridad de IA, ¿qué se entiende por \"Privacidad Diferencial\" (Differential Privacy)?",
+    "opciones": [
+      "Añadir \"ruido\" controlado a análisis sobre datos agregados para obtener resultados útiles sin revelar información de individuos.",
+      "El cifrado de los datos antes de enviarlos al modelo de IA.",
+      "Un método para entrenar modelos sin usar ningún dato personal.",
+      "Una política que exige eliminar los datos personales tras usarlos."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 73,
+    "tema": "ia-seguridad",
+    "pregunta": "En seguridad de IA, ¿qué describe un \"ataque de evasión\" (evasion attack)?",
+    "opciones": [
+      "Modificar ligeramente la entrada (ej. una imagen) para que el modelo la clasifique incorrectamente durante la inferencia.",
+      "Robar el modelo de IA completo (extracción de modelo).",
+      "Inyectar datos maliciosos durante la fase de entrenamiento.",
+      "Deducir información sensible de los datos de entrenamiento consultando el modelo."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 74,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "¿Qué técnica de autenticación puede mitigar ataques de reutilización de credenciales conocidas?",
+    "opciones": [
+      "Autenticación multifactor (MFA).",
+      "Uso de CAPTCHA en el registro.",
+      "Cifrado simétrico de las contraseñas.",
+      "Hashing de la sesión con MD5."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 75,
+    "tema": "nube-contenedores",
+    "pregunta": "¿Qué tipo de nube generalmente proporciona mayores controles de seguridad?",
+    "opciones": [
+      "Privada.",
+      "Pública.",
+      "Híbrida.",
+      "Comunitaria."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 76,
+    "tema": "movil",
+    "pregunta": "Según OWASP MASVS, ¿qué categoría garantiza que los datos sensibles se almacenen en ubicaciones seguras y cifradas?",
+    "opciones": [
+      "MASVS-STORAGE (Controles de seguridad de Almacenamiento).",
+      "MASVS-CODE (Controles de seguridad de Código).",
+      "MASVS-NETWORK (Controles de seguridad de Red).",
+      "MASVS-PLATFORM (Controles de seguridad de Plataforma)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 77,
+    "tema": "nube-contenedores",
+    "pregunta": "En el modelo de responsabilidad compartida, ¿qué aspecto de la seguridad en la nube es responsabilidad del cliente?",
+    "opciones": [
+      "La gestión de la seguridad de las aplicaciones y los datos alojados en la nube.",
+      "La protección de la infraestructura física del centro de datos.",
+      "La seguridad del hipervisor y la virtualización subyacente.",
+      "El mantenimiento del hardware de red del proveedor."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 78,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Qué práctica brinda al equipo de desarrollo una perspectiva similar a la de un atacante o usuario hostil?",
+    "opciones": [
+      "Modelado de amenazas.",
+      "Análisis de código estático (SAST).",
+      "Revisión de dependencias (SCA).",
+      "Pruebas unitarias funcionales."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 79,
+    "tema": "validacion-entradas",
+    "pregunta": "¿Cómo se denomina el proceso que garantiza que los datos no se interpreten como código (evitando inyecciones) ni disfracen formas alternativas?",
+    "opciones": [
+      "Sanitización.",
+      "Autenticación.",
+      "Canonicalización.",
+      "Ofuscación."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 80,
+    "tema": "nube-contenedores",
+    "pregunta": "¿Cuál servicio en la nube proporciona principalmente recursos de cómputo, almacenamiento y red a través de internet?",
+    "opciones": [
+      "Infrastructure-as-a-Service (IaaS).",
+      "Platform-as-a-Service (PaaS).",
+      "Software-as-a-Service (SaaS).",
+      "Function-as-a-Service (FaaS)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 81,
+    "tema": "api-seguridad",
+    "pregunta": "Es el gestor de tráfico que interactúa con el backend y aplica políticas, autenticación y control de acceso para las llamadas de una API. ¿Qué es?",
+    "opciones": [
+      "API Gateway.",
+      "Web Application Firewall (WAF).",
+      "Balanceador de Carga.",
+      "Proxy Inverso simple."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 82,
+    "tema": "criptografia",
+    "pregunta": "¿Qué es una función hash en el contexto de la encriptación de datos?",
+    "opciones": [
+      "Un algoritmo que convierte los datos en un valor de longitud fija.",
+      "Un algoritmo reversible que cifra y descifra con la misma clave.",
+      "Un método de compresión de datos sin pérdida.",
+      "Un protocolo de intercambio de claves públicas."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 83,
+    "tema": "pruebas-seguridad",
+    "pregunta": "Según DevSecOps, ¿qué comprobación de seguridad se debe aplicar en la etapa de Codificación?",
+    "opciones": [
+      "Uso de herramientas de pruebas estáticas de aplicaciones (SAST).",
+      "Uso de herramientas de pruebas dinámicas (DAST).",
+      "Pruebas de penetración manuales en producción.",
+      "Escaneo de infraestructura en tiempo de ejecución."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 84,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Qué aspectos evalúa el modelo DREAD en la clasificación de riesgos?",
+    "opciones": [
+      "Daño Potencial, Reproducibilidad, Explotabilidad, Usuarios Afectados y Descubrimiento.",
+      "Spoofing, Tampering, Repudiation, Information Disclosure, DoS y Elevation.",
+      "Confidencialidad, Integridad y Disponibilidad.",
+      "Prevención, Detección, Respuesta y Recuperación."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 85,
+    "tema": "criptografia",
+    "pregunta": "Los atacantes prueban sistemáticamente combinaciones de claves hasta descifrar los datos. ¿A qué categoría del OWASP Mobile Top 10 corresponde?",
+    "opciones": [
+      "Criptografía insuficiente.",
+      "Almacenamiento de datos inseguro.",
+      "Comunicación insegura.",
+      "Autenticación insegura."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 86,
+    "tema": "malware-red",
+    "pregunta": "¿Cuál es el software malicioso que inutiliza el dispositivo y encripta la información exigiendo un rescate?",
+    "opciones": [
+      "Ransomware.",
+      "Spyware.",
+      "Adware.",
+      "Rootkit."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 87,
+    "tema": "movil",
+    "pregunta": "Según OWASP MASVS, ¿qué categoría establece que la aplicación debe validar y desinfectar todas las entradas no confiables?",
+    "opciones": [
+      "MASVS-CODE (Controles de seguridad de Código).",
+      "MASVS-STORAGE (Controles de seguridad de Almacenamiento).",
+      "MASVS-PLATFORM (Controles de seguridad de Plataforma).",
+      "MASVS-RESILIENCE (Controles de seguridad de Resiliencia)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 88,
+    "tema": "pruebas-seguridad",
+    "pregunta": "¿Cuál afirmación describe mejor la diferencia entre SAST y DAST?",
+    "opciones": [
+      "SAST inspecciona el código sin ejecutarlo, mientras que DAST lo inspecciona durante su ejecución.",
+      "SAST se ejecuta en producción, mientras que DAST solo en desarrollo.",
+      "SAST analiza dependencias, mientras que DAST analiza la red.",
+      "Ambos requieren siempre el código fuente para funcionar."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 89,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Qué método examina los requisitos de seguridad en todas las etapas de creación del software, desde el análisis hasta el mantenimiento?",
+    "opciones": [
+      "S-SDLC (Ciclo de Vida de Desarrollo Seguro).",
+      "Metodología en cascada (Waterfall) tradicional.",
+      "Integración continua (CI) únicamente.",
+      "Programación extrema (XP) por sí sola."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 90,
+    "tema": "criptografia",
+    "pregunta": "¿Qué es la criptografía asimétrica?",
+    "opciones": [
+      "Una técnica de cifrado que usa claves diferentes (pública y privada) para cifrar y descifrar datos.",
+      "Una técnica que usa la misma clave para cifrar y descifrar.",
+      "Un algoritmo de hash de longitud fija.",
+      "Un método de compresión de datos con pérdida."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 91,
+    "tema": "control-acceso",
+    "pregunta": "¿Qué categoría del OWASP Top 10 de 2021 ocupa el primer lugar, desplazando a la Inyección que dominaba antes?",
+    "opciones": [
+      "A01:2021 - Broken Access Control.",
+      "A02:2021 - Cryptographic Failures.",
+      "A05:2021 - Security Misconfiguration.",
+      "A07:2021 - Identification and Authentication Failures."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 92,
+    "tema": "api-seguridad",
+    "pregunta": "¿Cuál es el formato preferido para los mensajes de las REST APIs, por ser ligero y legible por personas y máquinas?",
+    "opciones": [
+      "JSON.",
+      "XML.",
+      "YAML.",
+      "CSV."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 93,
+    "tema": "proteccion-codigo",
+    "pregunta": "El código JavaScript del cliente se debe ejecutar dentro de un ______ para que lo malicioso quede aislado y sin acceso a los recursos de la máquina.",
+    "opciones": [
+      "Sandbox.",
+      "Contenedor Docker.",
+      "Hipervisor.",
+      "Firewall."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 94,
+    "tema": "nube-contenedores",
+    "pregunta": "¿Qué proyecto de OWASP ofrece diez puntos para planificar e implementar un entorno seguro de contenedores?",
+    "opciones": [
+      "OWASP Docker Top 10.",
+      "OWASP API Security Top 10.",
+      "OWASP Mobile Top 10.",
+      "OWASP ASVS."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 95,
+    "tema": "seguridad-web",
+    "pregunta": "La ______ se produce cuando una API procesa URLs controladas por el usuario y obtiene recursos internos o remotos del servidor sin validar la solicitud.",
+    "opciones": [
+      "Server-Side Request Forgery (SSRF).",
+      "Cross-Site Scripting (XSS).",
+      "Broken Object Level Authorization (BOLA).",
+      "Cross-Site Request Forgery (CSRF)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 96,
+    "tema": "seguridad-web",
+    "pregunta": "¿Cuál es el propósito principal de implementar un WAF (Web Application Firewall)?",
+    "opciones": [
+      "Proteger la aplicación contra vulnerabilidades de seguridad conocidas filtrando el tráfico HTTP.",
+      "Cifrar todo el tráfico de la base de datos.",
+      "Sustituir por completo la validación de entradas en el backend.",
+      "Acelerar la entrega de contenido estático (CDN)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 97,
+    "tema": "ingenieria-social",
+    "pregunta": "Se dirige a una persona concreta para robar sus credenciales o datos financieros, haciéndose pasar por una persona o empresa de confianza. ¿Qué ataque es?",
+    "opciones": [
+      "Phishing.",
+      "Ransomware.",
+      "Buffer Overflow.",
+      "Cross-Site Scripting."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 98,
+    "tema": "malware-red",
+    "pregunta": "¿Qué tipo de malware permanece oculto y opera de forma sigilosa, a menudo sin conocimiento del usuario o del sistema victimizado?",
+    "opciones": [
+      "Stealthware.",
+      "Adware.",
+      "Scareware.",
+      "Bomba lógica."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 99,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Qué categoría del modelo STRIDE se refiere a la interrupción del servicio que afecta la disponibilidad?",
+    "opciones": [
+      "Denial of Service (Denegación de Servicio).",
+      "Spoofing (Suplantación de identidad).",
+      "Tampering (Manipulación de datos).",
+      "Elevation of Privilege (Elevación de privilegios)."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 100,
+    "tema": "control-acceso",
+    "pregunta": "¿Cómo se denomina el principio de seguridad que indica que únicamente se deben otorgar los permisos necesarios para completar la tarea asignada?",
+    "opciones": [
+      "Menor privilegio.",
+      "Defensa en profundidad.",
+      "Separación de responsabilidades.",
+      "Mediación completa."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 101,
+    "tema": "validacion-entradas",
+    "pregunta": "Un atacante sobrescribe la dirección de retorno para apuntar a un payload inyectado en memoria y toma el control de la ejecución. ¿Qué ataque es?",
+    "opciones": [
+      "Buffer Overflow (Desbordamiento de búfer).",
+      "Inyección SQL.",
+      "Cross-Site Scripting.",
+      "Path Traversal."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 102,
+    "tema": "criptografia",
+    "pregunta": "¿Qué son los \"Salt Values\" en el almacenamiento de contraseñas?",
+    "opciones": [
+      "Bytes aleatorios que se añaden a la función hash para evitar colisiones y ataques de diccionario preconstruidos.",
+      "Claves privadas que se usan para firmar las contraseñas.",
+      "Algoritmos de cifrado simétrico rápidos.",
+      "Tokens de sesión de un solo uso."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 103,
+    "tema": "sdlc-amenazas",
+    "pregunta": "¿Qué metodología de modelado de amenazas se realiza en la fase de diseño, agrupando las amenazas en seis categorías?",
+    "opciones": [
+      "STRIDE.",
+      "DREAD.",
+      "PASTA.",
+      "OCTAVE."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 104,
+    "tema": "ingenieria-social",
+    "pregunta": "Cuando hablamos de agentes de amenaza humanos, ¿cómo se denomina al usuario común que ejecuta scripts de otros sin comprender el impacto?",
+    "opciones": [
+      "Script Kiddies.",
+      "Insider (interno).",
+      "Cibercriminal organizado.",
+      "Hacktivista."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 105,
+    "tema": "ingenieria-social",
+    "pregunta": "Un administrador de base de datos con acceso sin restricciones y sin auditar es una fuente de amenaza. ¿A qué tipo de agente humano corresponde?",
+    "opciones": [
+      "Insider (amenaza interna).",
+      "Script Kiddie.",
+      "Descubridor accidental.",
+      "Cibercriminal externo."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 106,
+    "tema": "ingenieria-social",
+    "pregunta": "¿Cómo se denomina la estafa que instala código malicioso para redirigir a los usuarios a sitios web fraudulentos manipulando el DNS?",
+    "opciones": [
+      "Pharming.",
+      "Phishing.",
+      "Vishing.",
+      "Smishing."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 107,
+    "tema": "proteccion-codigo",
+    "pregunta": "¿Qué técnica se utiliza para proteger un software de un ataque de ingeniería inversa haciendo el código difícil de interpretar?",
+    "opciones": [
+      "Ofuscación.",
+      "Compilación cruzada.",
+      "Minificación de recursos.",
+      "Canonicalización."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 108,
+    "tema": "pruebas-seguridad",
+    "pregunta": "¿Qué tipo de análisis implica la inspección del código o programas de software sin ejecutarlos?",
+    "opciones": [
+      "Análisis de código estático.",
+      "Análisis de código dinámico.",
+      "Análisis de composición de software (SCA).",
+      "Pruebas de penetración."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 109,
+    "tema": "nube-contenedores",
+    "pregunta": "¿Cuál es una responsabilidad clave del proveedor en el modelo de responsabilidad compartida en la nube?",
+    "opciones": [
+      "Proteger la infraestructura subyacente, como los servicios de almacenamiento y redes físicas.",
+      "Gestionar los controles de acceso de los usuarios de la aplicación.",
+      "Cifrar los datos que el cliente sube a la aplicación.",
+      "Configurar correctamente las reglas del sistema operativo invitado."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 110,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "¿Cómo se conoce la información de identificación (usuario, contraseña, certificados) que presenta una persona o proceso para verificar su identidad?",
+    "opciones": [
+      "Credenciales.",
+      "Autorización.",
+      "Tokens de sesión.",
+      "Privilegios."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 111,
+    "tema": "arquitectura-datos",
+    "pregunta": "¿Qué tipo de arquitectura se basa en servicios independientes, cada uno en su propio proceso, comunicándose por mecanismos ligeros como HTTP?",
+    "opciones": [
+      "Microservicios.",
+      "Monolítica.",
+      "Cliente-servidor de dos capas.",
+      "Peer-to-peer."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 112,
+    "tema": "control-acceso",
+    "pregunta": "¿A qué principio de seguridad corresponde no combinar el rol de la persona que recibe pagos con la que los aprueba?",
+    "opciones": [
+      "Separación de responsabilidades (Separation of Duties).",
+      "Menor privilegio.",
+      "Fallo seguro.",
+      "Economía de mecanismos."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 113,
+    "tema": "principios-diseno",
+    "pregunta": "¿A qué principio de seguridad se refiere que el diseño de los mecanismos de protección debe estar abierto al escrutinio de la comunidad?",
+    "opciones": [
+      "Diseño Abierto (Open Design).",
+      "Seguridad por oscuridad.",
+      "Defensa en profundidad.",
+      "Mediación completa."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 114,
+    "tema": "principios-diseno",
+    "pregunta": "¿Cuál principio de seguridad indica que no se deben permitir violaciones de seguridad en caso de una falla del sistema?",
+    "opciones": [
+      "Fallo Seguro (Fail Secure).",
+      "Diseño Abierto.",
+      "Menor privilegio.",
+      "Aprovechamiento de componentes existentes."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 115,
+    "tema": "principios-diseno",
+    "pregunta": "¿Qué principio de seguridad es también conocido como \"Defensa en Capas\"?",
+    "opciones": [
+      "Defensa en Profundidad (Defense in Depth).",
+      "Menor privilegio.",
+      "Economía de mecanismos.",
+      "Diseño abierto."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 116,
+    "tema": "principios-diseno",
+    "pregunta": "¿A qué principio de seguridad corresponde validar los derechos de acceso cada vez que ocurre un acceso a un recurso?",
+    "opciones": [
+      "Mediación Completa (Complete Mediation).",
+      "Menor privilegio.",
+      "Separación de responsabilidades.",
+      "Fallo seguro."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 117,
+    "tema": "arquitectura-datos",
+    "pregunta": "Se aplica cuando una operación bloquea un registro para que no permita cambios simultáneos y así garantizar la integridad de los datos. ¿Qué concepto es?",
+    "opciones": [
+      "Bloqueo de recursos (Resource Locking).",
+      "Replicación de datos.",
+      "Escalabilidad horizontal.",
+      "Recolección de basura."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 118,
+    "tema": "validacion-entradas",
+    "pregunta": "¿Cómo se denomina el proceso de conversión de datos que tienen más de una representación posible para ajustarlos a una forma estándar?",
+    "opciones": [
+      "Canonicalización.",
+      "Sanitización.",
+      "Ofuscación.",
+      "Serialización."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 119,
+    "tema": "arquitectura-datos",
+    "pregunta": "Agregar recursos adicionales (más CPU, memoria o almacenamiento) a un nodo existente corresponde a ¿qué tipo de escalabilidad?",
+    "opciones": [
+      "Escalabilidad vertical.",
+      "Escalabilidad horizontal.",
+      "Replicación maestro-esclavo.",
+      "Balanceo de carga."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 120,
+    "tema": "arquitectura-datos",
+    "pregunta": "Instalar copias adicionales del mismo software o agregar un proxy de caché a la implementación existente es un ejemplo de ¿qué tipo de escalabilidad?",
+    "opciones": [
+      "Escalabilidad horizontal.",
+      "Escalabilidad vertical.",
+      "Bloqueo de recursos.",
+      "Tolerancia a fallos."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 121,
+    "tema": "proteccion-codigo",
+    "pregunta": "¿Cuál es una técnica anti-manipulación para asegurar la integridad y proteger contra alteraciones no autorizadas del código del software?",
+    "opciones": [
+      "Firmado de código (Code Signing).",
+      "Compresión del ejecutable.",
+      "Minificación del código.",
+      "Uso de comentarios cifrados."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 122,
+    "tema": "proteccion-codigo",
+    "pregunta": "¿Cómo se denomina al mecanismo de seguridad que evita que el software en ejecución acceda al sistema operativo host?",
+    "opciones": [
+      "Sandboxing.",
+      "Hashing.",
+      "Tokenización.",
+      "Firmado de código."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 123,
+    "tema": "nube-contenedores",
+    "pregunta": "La instalación de software con usuarios/contraseñas por defecto, puertos innecesarios y directorios no protegidos permite ataques de ¿qué categoría?",
+    "opciones": [
+      "Security Misconfiguration (Configuración incorrecta de seguridad).",
+      "Broken Access Control.",
+      "Cryptographic Failures.",
+      "Injection."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 124,
+    "tema": "autenticacion-sesiones",
+    "pregunta": "Un usuario obtiene una contraseña ajena por fuerza bruta, hashes débiles o exposición del ID de sesión en la URL, suplantando la identidad. ¿Qué categoría es?",
+    "opciones": [
+      "Identification and Authentication Failures.",
+      "Security Misconfiguration.",
+      "Software and Data Integrity Failures.",
+      "Vulnerable and Outdated Components."
+    ],
+    "respuestaCorrecta": 0
+  },
+  {
+    "id": 125,
+    "tema": "dependencias",
+    "pregunta": "Usar componentes descargados de fuentes oficiales mediante comunicación segura mitiga ¿qué categoría de vulnerabilidad?",
+    "opciones": [
+      "Vulnerable and Outdated Components (Componentes vulnerables y obsoletos).",
+      "Broken Access Control.",
+      "Cryptographic Failures.",
+      "Injection."
+    ],
+    "respuestaCorrecta": 0
+  }
+]

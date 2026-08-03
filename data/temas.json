@@ -1,0 +1,294 @@
+{
+  "ingenieria-social": {
+    "nombre": "Ingeniería social y agentes de amenaza",
+    "resumen": "Estos fallos no son técnicos: el atacante manipula a una persona. Lo que se evalúa es distinguir las variantes del engaño según el canal y reconocer los tipos de atacante.",
+    "repasar": [
+      "Vectores según el canal: phishing por correo, spear phishing dirigido, whaling contra directivos, vishing por llamada y smishing por SMS.",
+      "Pharming: manipulación del DNS para llevarte a un sitio falso aunque la dirección escrita sea la correcta.",
+      "Técnicas sin tecnología: pretexting, baiting, tailgating y dumpster diving.",
+      "Agentes de amenaza humanos: script kiddies, insiders, hacktivistas, crimen organizado y actores patrocinados por estados."
+    ],
+    "recursos": []
+  },
+  "inyeccion": {
+    "nombre": "Inyección de código y consultas seguras",
+    "resumen": "Casi toda inyección nace del mismo error: construir una instrucción concatenando texto que viene del usuario. La defensa no es filtrar caracteres, es separar el código de los datos.",
+    "repasar": [
+      "Consultas parametrizadas y prepared statements: el parámetro se trata siempre como dato literal, nunca como SQL ejecutable.",
+      "Por qué escapar comillas a mano es una defensa frágil comparada con parametrizar.",
+      "Inyección de comandos del sistema operativo: evitar construir la orden concatenando y usar APIs que reciban los argumentos por separado.",
+      "Path traversal y Local File Inclusion: validar el nombre del archivo contra una lista blanca y resolver la ruta canónica antes de abrirlo.",
+      "Mínimo privilegio en la cuenta de base de datos que usa la aplicación, para limitar el daño si la inyección ocurre."
+    ],
+    "recursos": [
+      { "titulo": "SQL Injection Prevention", "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html" },
+      { "titulo": "Query Parameterization", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html" },
+      { "titulo": "OS Command Injection Defense", "url": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html" }
+    ]
+  },
+  "validacion-entradas": {
+    "nombre": "Validación y saneamiento de entradas",
+    "resumen": "La regla es simple: validar en el servidor, con lista blanca, y normalizar antes de comparar. La validación en el navegador es comodidad para el usuario, no un control de seguridad.",
+    "repasar": [
+      "Por qué la validación en el frontend se salta interceptando la petición: ayuda al usuario, pero no protege nada.",
+      "Lista blanca frente a lista negra: definir qué se acepta en lugar de intentar enumerar todo lo que se prohíbe.",
+      "Validar tipo, rango, longitud y formato antes de usar el dato, incluso cuando el error es involuntario.",
+      "Canonicalización: llevar el dato a una forma estándar antes de validarlo, para evitar saltos con codificaciones alternativas.",
+      "Subida de archivos: renombrar, comprobar el tipo real por magic bytes y guardar fuera del directorio público.",
+      "Desbordamiento de búfer: comprobar longitudes en lenguajes sin gestión automática de memoria."
+    ],
+    "recursos": [
+      { "titulo": "Input Validation", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html" },
+      { "titulo": "File Upload", "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html" }
+    ]
+  },
+  "criptografia": {
+    "nombre": "Criptografía y gestión de secretos",
+    "resumen": "Aquí se falla por dos motivos: elegir el algoritmo equivocado para la tarea o gestionar mal las claves. Cifrar y hashear no son intercambiables.",
+    "repasar": [
+      "Hash frente a cifrado: el hash va en un solo sentido y produce longitud fija; el cifrado es reversible con la clave.",
+      "Contraseñas: bcrypt, scrypt o Argon2 con salt único. MD5 y SHA-1 están rotos y además son demasiado rápidos de calcular.",
+      "Para qué sirve el salt: impedir rainbow tables y evitar que dos contraseñas iguales generen el mismo hash.",
+      "Simétrico frente a asimétrico: una única clave compartida frente al par de clave pública y privada.",
+      "TLS garantiza confidencialidad e integridad en tránsito; enviar un token por HTTP lo expone a interceptación.",
+      "Nunca incrustar claves en el código: usar variables de entorno o un gestor de secretos, porque el binario se puede decompilar."
+    ],
+    "recursos": [
+      { "titulo": "Password Storage", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html" },
+      { "titulo": "Cryptographic Storage", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html" },
+      { "titulo": "Key Management", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html" },
+      { "titulo": "Secrets Management", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html" },
+      { "titulo": "Transport Layer Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html" }
+    ]
+  },
+  "autenticacion-sesiones": {
+    "nombre": "Autenticación y gestión de sesiones",
+    "resumen": "El objetivo es que nadie pueda suplantar a otro usuario. Se falla al generar identificadores predecibles, al guardarlos donde JavaScript los alcanza y al no limitar los intentos.",
+    "repasar": [
+      "Los identificadores de sesión deben venir de un generador criptográficamente seguro, nunca de la hora del sistema ni de un contador.",
+      "Cookies con HttpOnly, Secure y SameSite frente a guardar el token en localStorage, que es accesible desde JavaScript y por tanto robable vía XSS.",
+      "MFA como defensa frente a credenciales robadas en otras brechas, que es de lo que vive el credential stuffing.",
+      "Rate limiting y CAPTCHA en login, recuperación de contraseña y validación de códigos de un solo uso.",
+      "Expiración de sesión, regeneración del identificador tras iniciar sesión y cierre efectivo en el servidor.",
+      "En OAuth 2.0 con Authorization Code, el parámetro state es lo que protege el callback frente a CSRF."
+    ],
+    "recursos": [
+      { "titulo": "Session Management", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html" },
+      { "titulo": "Multifactor Authentication", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html" },
+      { "titulo": "Credential Stuffing Prevention", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Credential_Stuffing_Prevention_Cheat_Sheet.html" },
+      { "titulo": "Forgot Password", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html" }
+    ]
+  },
+  "control-acceso": {
+    "nombre": "Control de acceso y autorización",
+    "resumen": "Autenticar responde a quién eres; autorizar responde a qué puedes hacer. El fallo típico es comprobar lo primero y dar por hecho lo segundo.",
+    "repasar": [
+      "Verificar la autorización en el servidor en cada petición: ocultar un botón en la interfaz no es un control.",
+      "BOLA e IDOR: comprobar que el objeto solicitado pertenece al usuario autenticado, no solo que haya iniciado sesión.",
+      "Menor privilegio: conceder únicamente los permisos imprescindibles para la tarea.",
+      "Separación de funciones: quien aprueba un pago no debe ser quien lo recibe o ejecuta.",
+      "Broken Access Control es la categoría A01 del OWASP Top 10 2021, que desplazó a Inyección del primer puesto."
+    ],
+    "recursos": [
+      { "titulo": "Authorization", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html" },
+      { "titulo": "Insecure Direct Object Reference Prevention", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html" },
+      { "titulo": "OWASP Top 10", "url": "https://owasp.org/www-project-top-ten/" }
+    ]
+  },
+  "seguridad-web": {
+    "nombre": "Seguridad web y del navegador",
+    "resumen": "Este bloque va de lo que ocurre entre el navegador y el servidor: qué se ejecuta en la página, qué puede enmarcarla y qué peticiones lanza el servidor en tu nombre.",
+    "repasar": [
+      "XSS: escapar según el contexto de salida y no interpretar como HTML el contenido que envía el usuario.",
+      "Content-Security-Policy para restringir de dónde puede cargar recursos el navegador y mitigar XSS.",
+      "X-Content-Type-Options: nosniff impide que el navegador adivine el tipo de contenido ignorando el Content-Type.",
+      "X-Frame-Options y frame-ancestors como defensa frente al clickjacking mediante iframes superpuestos.",
+      "Referrer-Policy para evitar que la URL de origen filtre información sensible a terceros.",
+      "SSRF: validar y restringir las URLs que solicita el servidor, vigilando direcciones internas y endpoints de metadatos de la nube.",
+      "Un WAF filtra tráfico con patrones conocidos, pero no sustituye a corregir el código vulnerable."
+    ],
+    "recursos": [
+      { "titulo": "Cross Site Scripting Prevention", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html" },
+      { "titulo": "Content Security Policy", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html" },
+      { "titulo": "Clickjacking Defense", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html" },
+      { "titulo": "HTTP Headers", "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html" },
+      { "titulo": "Server Side Request Forgery Prevention", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html" }
+    ]
+  },
+  "api-seguridad": {
+    "nombre": "Seguridad de APIs",
+    "resumen": "Una API expone la lógica de negocio sin la capa de interfaz que suele ocultar los errores, así que los fallos de diseño quedan a la vista.",
+    "repasar": [
+      "Inventario de APIs: las versiones antiguas y los endpoints olvidados siguen siendo superficie de ataque.",
+      "API Gateway como punto único donde aplicar autenticación, autorización, limitación de tráfico y registro.",
+      "Firma de solicitudes con la clave privada del cliente para garantizar autenticidad e integridad de cada llamada.",
+      "JSON como formato habitual en REST, y el cuidado necesario al deserializar contenido no confiable."
+    ],
+    "recursos": [
+      { "titulo": "REST Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html" },
+      { "titulo": "Microservices Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Microservices_Security_Cheat_Sheet.html" }
+    ]
+  },
+  "sdlc-amenazas": {
+    "nombre": "S-SDLC, modelado de amenazas y riesgos",
+    "resumen": "La idea de fondo es que la seguridad se diseña, no se audita al final. Cuanto antes aparece un fallo en el ciclo, más barato resulta corregirlo.",
+    "repasar": [
+      "El S-SDLC integra controles en todas las fases, desde requisitos hasta mantenimiento, no solo en una revisión final.",
+      "El modelado de amenazas se hace en la fase de diseño, cuando cambiar la arquitectura todavía es viable.",
+      "STRIDE: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service y Elevation of privilege.",
+      "DREAD: daño potencial, reproducibilidad, explotabilidad, usuarios afectados y descubribilidad.",
+      "Evil user stories y casos de abuso para que los requisitos de seguridad entren en el backlog y se prioricen.",
+      "Matriz de trazabilidad: cada requisito de seguridad enlazado con su diseño, su código y la prueba que lo verifica.",
+      "Vocabulario de riesgo: activo, amenaza, vulnerabilidad e impacto; y en continuidad, las métricas RTO y RPO."
+    ],
+    "recursos": [
+      { "titulo": "Threat Modeling", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html" },
+      { "titulo": "Abuse Case", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Abuse_Case_Cheat_Sheet.html" },
+      { "titulo": "Secure Product Design", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Product_Design_Cheat_Sheet.html" },
+      { "titulo": "Attack Surface Analysis", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.html" }
+    ]
+  },
+  "pruebas-seguridad": {
+    "nombre": "Pruebas de seguridad y análisis de código",
+    "resumen": "Lo que suele confundirse es qué mira cada herramienta y en qué momento. La distinción clave es si el código se ejecuta o no, y si se analiza el código propio o el ajeno.",
+    "repasar": [
+      "SAST analiza el código fuente sin ejecutarlo; DAST prueba la aplicación en ejecución, desde fuera y sin ver el código.",
+      "SCA se ocupa de las dependencias de terceros, no del código que escribes tú.",
+      "Fuzzing: enviar entradas inválidas, inesperadas o aleatorias en masa para provocar fallos no previstos.",
+      "OWASP ZAP como proxy de intercepción y escáner dinámico de aplicaciones web.",
+      "En DevSecOps, SAST encaja en la etapa de codificación y DAST en entornos ya desplegados."
+    ],
+    "recursos": [
+      { "titulo": "Secure Code Review", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Code_Review_Cheat_Sheet.html" }
+    ]
+  },
+  "malware-red": {
+    "nombre": "Malware y seguridad de red",
+    "resumen": "Preguntas de reconocimiento: identificar cada familia de software malicioso por su comportamiento y ubicar las defensas de red más habituales.",
+    "repasar": [
+      "Familias de malware por comportamiento: troyano que se disfraza, ransomware que cifra y extorsiona, gusano que se propaga solo, spyware y stealthware que operan ocultos.",
+      "DoS frente a DDoS: una única fuente frente a un ataque distribuido desde muchos equipos comprometidos.",
+      "Honeypot: sistema señuelo deliberadamente vulnerable para atraer, detectar y estudiar a los atacantes.",
+      "VPN para cifrar el tráfico entre un equipo remoto y la red corporativa."
+    ],
+    "recursos": [
+      { "titulo": "Denial of Service", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Denial_of_Service_Cheat_Sheet.html" },
+      { "titulo": "Network Segmentation", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Network_Segmentation_Cheat_Sheet.html" }
+    ]
+  },
+  "logging-errores": {
+    "nombre": "Registro, monitorización y manejo de errores",
+    "resumen": "Un error mal gestionado le regala información al atacante, y un log incompleto deja al equipo sin capacidad de investigar lo que pasó.",
+    "repasar": [
+      "Mostrar mensajes genéricos al usuario y guardar el detalle en el log: un stack trace en pantalla es información gratis para el atacante.",
+      "Qué registrar: quién, qué, cuándo y desde dónde, incluyendo los intentos fallidos de autenticación y autorización.",
+      "Qué no registrar nunca: contraseñas, tokens, datos de tarjeta y en general información sensible.",
+      "Threat hunting: búsqueda proactiva de indicadores de compromiso que las herramientas automáticas no han detectado."
+    ],
+    "recursos": [
+      { "titulo": "Error Handling", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Error_Handling_Cheat_Sheet.html" },
+      { "titulo": "Logging Vocabulary", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Vocabulary_Cheat_Sheet.html" }
+    ]
+  },
+  "nube-contenedores": {
+    "nombre": "Nube, contenedores y configuración segura",
+    "resumen": "Lo esencial es saber dónde acaba la responsabilidad del proveedor y dónde empieza la tuya, y por qué una configuración por defecto casi nunca es una configuración segura.",
+    "repasar": [
+      "Modelo de responsabilidad compartida: el proveedor asegura la infraestructura de la nube, el cliente asegura las aplicaciones y los datos que despliega en ella.",
+      "Modelos de servicio IaaS, PaaS y SaaS, y cuánto control conserva el cliente en cada uno.",
+      "Contenedores: sistema de archivos raíz en solo lectura, no ejecutar como root e imágenes base mínimas.",
+      "Security Misconfiguration: credenciales por defecto, puertos innecesarios abiertos y directorios sin proteger."
+    ],
+    "recursos": [
+      { "titulo": "Secure Cloud Architecture", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Cloud_Architecture_Cheat_Sheet.html" },
+      { "titulo": "Docker Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html" },
+      { "titulo": "Kubernetes Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Kubernetes_Security_Cheat_Sheet.html" },
+      { "titulo": "Infrastructure as Code Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Infrastructure_as_Code_Security_Cheat_Sheet.html" }
+    ]
+  },
+  "movil": {
+    "nombre": "Seguridad en aplicaciones móviles",
+    "resumen": "En móvil el binario está en manos del atacante, así que todo lo que dejes dentro se puede extraer. Ese es el hilo conductor de casi todas estas preguntas.",
+    "repasar": [
+      "OWASP MASVS y sus categorías: MASVS-STORAGE para el almacenamiento seguro y MASVS-CODE para la validación de entradas y la calidad del código.",
+      "No dejar claves ni secretos en el binario ni en archivos de configuración: se extraen con ingeniería inversa.",
+      "Desactivar la depuración y los logs verbosos en las compilaciones de producción, que filtran endpoints y tokens.",
+      "Method swizzling y hooking en tiempo de ejecución como vector para interceptar llamadas sensibles."
+    ],
+    "recursos": [
+      { "titulo": "Mobile Application Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Mobile_Application_Security_Cheat_Sheet.html" },
+      { "titulo": "OWASP MASVS", "url": "https://mas.owasp.org/MASVS/" }
+    ]
+  },
+  "ia-seguridad": {
+    "nombre": "Seguridad en inteligencia artificial",
+    "resumen": "Bloque de conceptos: en qué momento del ciclo del modelo ocurre cada ataque y qué técnicas protegen los datos de entrenamiento.",
+    "repasar": [
+      "Ataques adversariales: la evasión ocurre durante la inferencia, el envenenamiento durante el entrenamiento.",
+      "Robustez: capacidad del modelo de mantener su rendimiento ante entradas ruidosas, inesperadas o manipuladas.",
+      "Privacidad diferencial: añadir ruido controlado a los resultados agregados para no revelar información de individuos.",
+      "Aprendizaje federado: los datos no salen del dispositivo, solo viajan las actualizaciones del modelo."
+    ],
+    "recursos": [
+      { "titulo": "Secure AI Model Ops", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_AI_Model_Ops_Cheat_Sheet.html" },
+      { "titulo": "LLM Prompt Injection Prevention", "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html" }
+    ]
+  },
+  "dependencias": {
+    "nombre": "Dependencias y cadena de suministro",
+    "resumen": "El código que no escribiste también es tuyo en producción. Estas preguntas giran en torno a saber qué incluyes y de dónde viene.",
+    "repasar": [
+      "Analizar vulnerabilidades conocidas con SCA (OWASP Dependency-Check, Snyk) antes de incorporar una librería.",
+      "Descargar componentes solo de repositorios oficiales y a través de un canal cifrado.",
+      "A06:2021 Vulnerable and Outdated Components frente a A08:2021 Software and Data Integrity Failures.",
+      "Integridad de la cadena de suministro: firmas verificadas, inventario SBOM y protección del pipeline de CI/CD."
+    ],
+    "recursos": [
+      { "titulo": "Vulnerable Dependency Management", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html" },
+      { "titulo": "Software Supply Chain Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Software_Supply_Chain_Security_Cheat_Sheet.html" },
+      { "titulo": "CI/CD Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/CI_CD_Security_Cheat_Sheet.html" }
+    ]
+  },
+  "arquitectura-datos": {
+    "nombre": "Arquitectura, escalabilidad e integridad de datos",
+    "resumen": "Decisiones de estructura que afectan a la seguridad: por dónde entran las peticiones, cómo crece el sistema y cómo se garantiza que los datos queden consistentes.",
+    "repasar": [
+      "Punto único de entrada (Intercepting Filter o API Gateway) para centralizar validación, autenticación y registro.",
+      "Microservicios: servicios independientes en su propio proceso que se comunican por mecanismos ligeros, con controles en cada frontera.",
+      "Escalabilidad vertical, añadir recursos al mismo nodo, frente a horizontal, añadir más nodos o réplicas.",
+      "Integridad transaccional: atomicidad, uso correcto de SAVEPOINT y ROLLBACK, y bloqueo de recursos para evitar modificaciones simultáneas."
+    ],
+    "recursos": [
+      { "titulo": "Microservices Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Microservices_Security_Cheat_Sheet.html" },
+      { "titulo": "Database Security", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Database_Security_Cheat_Sheet.html" }
+    ]
+  },
+  "proteccion-codigo": {
+    "nombre": "Protección del software y aislamiento",
+    "resumen": "Medidas que protegen el propio artefacto de software: demostrar que no ha sido alterado, dificultar su análisis y limitar lo que puede tocar cuando se ejecuta.",
+    "repasar": [
+      "Firmado de código: garantiza la autoría y detecta cualquier alteración del binario distribuido.",
+      "Ofuscación: dificulta la ingeniería inversa, pero no la impide, así que nunca es la única defensa.",
+      "Sandboxing: aislar la ejecución para que el código no alcance el sistema operativo anfitrión.",
+      "El sandbox del navegador y sus límites al ejecutar JavaScript de terceros."
+    ],
+    "recursos": [
+      { "titulo": "Third Party Javascript Management", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html" }
+    ]
+  },
+  "principios-diseno": {
+    "nombre": "Principios de diseño seguro",
+    "resumen": "Los principios clásicos de Saltzer y Schroeder y la terminología base. Son preguntas de definición: conviene poder enunciar cada principio en una frase.",
+    "repasar": [
+      "Menor privilegio, defensa en profundidad (o defensa en capas) y separación de funciones.",
+      "Economía de mecanismos: cuanto más simple es el diseño, menos margen hay para el error.",
+      "Mediación completa: validar los derechos de acceso en cada acceso, sin confiar en decisiones cacheadas.",
+      "Diseño abierto: la seguridad debe residir en la clave, no en mantener el algoritmo en secreto.",
+      "Fallo seguro: ante un error del sistema, la respuesta por defecto es denegar.",
+      "La tríada confidencialidad, integridad y disponibilidad, más el no repudio como garantía de autoría."
+    ],
+    "recursos": [
+      { "titulo": "Secure Product Design", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secure_Product_Design_Cheat_Sheet.html" }
+    ]
+  }
+}
