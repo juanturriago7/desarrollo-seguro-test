@@ -514,28 +514,6 @@ Si algo sigue sin funcionar, abre las herramientas de desarrollo del navegador
 (<kbd>F12</kbd>) y mira la pestaña *Console*: los fallos de carga se registran ahí con el motivo
 exacto.
 
-## Despliegue en Netlify
-
-`netlify.toml` define un "build" que se limita a copiar a `dist/` únicamente lo que debe
-publicarse:
-
-```
-index.html + src/ + data/   ->   dist/
-```
-
-`docs/` queda fuera a propósito, para que **los PDFs del curso no sean accesibles desde el sitio
-publicado** aunque estén versionados en el repositorio privado.
-
-También se envían cabeceras de seguridad básicas: `X-Content-Type-Options`, `X-Frame-Options`,
-`Referrer-Policy` y `Permissions-Policy`.
-
-Pasos:
-
-1. Subir el repositorio a GitHub como **privado**.
-2. En Netlify, *Add new site → Import an existing project* y autorizar el repositorio.
-3. Netlify lee `netlify.toml`, así que no hay que configurar nada más.
-4. Opcionalmente, proteger el sitio con contraseña en *Site settings → Access control*, ya que la
-   URL pública sería adivinable.
 
 ## Tecnologías
 
@@ -570,39 +548,6 @@ botones de opción, no solo en el de inicio. Ambos están en el [roadmap](#roadm
 - **Recomendaciones por tema, no por pregunta.** La guía explica el área, pero no justifica el
   matiz concreto de cada enunciado.
 
-## Roadmap
-
-- [x] Etiquetar las preguntas por tema.
-- [x] Mostrar recomendaciones de estudio en el reporte de errores.
-- [x] Resumen de los temas con más fallos.
-- [x] Versión de un solo archivo que se abra con doble clic.
-- [ ] Añadir un campo de explicación por pregunta, además de la guía por tema.
-- [ ] Permitir generar un examen filtrado por uno o varios temas.
-- [ ] Permitir elegir la cantidad de preguntas del intento.
-- [ ] Guardar el historial de intentos en `localStorage`.
-- [ ] Modo de repaso solo con las preguntas falladas anteriormente.
-- [ ] Temporizador opcional para simular la presión del examen real.
-- [ ] Navegación por teclado (teclas 1–4 y flechas).
-
-## Cómo contribuir
-
-1. Crear una rama a partir de `main` con un nombre descriptivo.
-2. Hacer el cambio respetando la separación de responsabilidades: la lógica va en `quiz.js` y el
-   DOM en `ui.js`. Si un cambio necesita tocar los dos, probablemente convenga replantearlo.
-3. Ejecutar `npm test`. Toda la lógica nueva debería quedar cubierta.
-4. Si el cambio afecta a la interfaz, regenerar las capturas con `npm run capturas` e incluirlas en
-   el commit.
-5. Abrir un Pull Request explicando qué cambia y por qué.
-
-Convenciones del código: nombres y comentarios en español, `textContent` en lugar de `innerHTML`,
-clases de Tailwind completas y nunca interpoladas, y sin añadir dependencias salvo que haya una
-razón de peso. Parte del valor del proyecto es que se puede leer entero en una tarde.
-
-## Licencia y uso
-
-Software de uso **interno**, publicado como `UNLICENSED` en `package.json`. El banco de preguntas
-deriva de material de formación propiedad de la empresa, así que ni el código ni los datos deben
-publicarse en repositorios públicos ni compartirse fuera de la organización.
 
 ---
 
