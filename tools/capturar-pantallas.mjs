@@ -9,12 +9,13 @@
  */
 import { spawn } from 'node:child_process';
 import { mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const RAIZ = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DESTINO = join(RAIZ, 'docs', 'capturas');
-const PERFIL = join('/tmp', `chrome-capturas-${process.pid}`);
+const PERFIL = join(tmpdir(), `chrome-capturas-${process.pid}`);
 const PUERTO = 9333;
 const ANCHO = 900;
 
@@ -24,6 +25,8 @@ const CADA_CUANTOS_FALLA = 7;
 
 const CHROMES = [
   process.env.CHROME_BIN,
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
   'google-chrome',
   'google-chrome-stable',
   'chromium',
@@ -37,7 +40,7 @@ function abrirChrome(url) {
     const proceso = spawn(
       binario,
       [
-        '--headless',
+        '--headless=new',
         '--no-sandbox',
         '--disable-gpu',
         '--hide-scrollbars',
@@ -58,7 +61,9 @@ async function conectar() {
   for (let i = 0; i < 100; i++) {
     try {
       const targets = await (await fetch(`http://localhost:${PUERTO}/json`)).json();
-      const pagina = targets.find((t) => t.type === 'page' && t.url.startsWith('file://'));
+      const pagina = targets.find(
+        (t) => t.type === 'page' && (t.url.startsWith('file://') || t.url.startsWith('http'))
+      );
       if (pagina) return pagina.webSocketDebuggerUrl;
     } catch {}
     await dormir(250);
@@ -84,7 +89,7 @@ function crearCliente(ws) {
     });
 }
 
-const chrome = abrirChrome(`file://${join(RAIZ, 'dist', 'simulador-standalone.html')}`);
+const chrome = abrirChrome(pathToFileURL(join(RAIZ, 'dist', 'simulador-standalone.html')).href);
 
 try {
   const ws = new WebSocket(await conectar());
@@ -150,6 +155,16 @@ try {
 
   console.log('Capturando pantallas:');
   await capturar('01-bienvenida.png', ['#welcome-screen']);
+  await capturar('07-recomendaciones-boton.png', ['#recs-open-btn', '#start-btn'], {
+    arriba: 16,
+    abajo: 16,
+  });
+
+  await evaluar(`document.getElementById('recs-open-btn').click(); true`);
+  await dormir(400);
+  await capturar('08-recomendaciones-modal.png', ['#recs-dialog'], { arriba: 8, abajo: 8 });
+  await evaluar(`document.getElementById('recs-dialog').close(); true`);
+  await dormir(200);
 
   // El banco se inyecta en la página para poder responder de forma determinista.
   const banco = readFileSync(join(RAIZ, 'data', 'preguntas.json'), 'utf8');
@@ -219,7 +234,7 @@ try {
 
   // El aviso que aparece al abrir index.html sin servidor, para la guía de
   // solución de problemas del README.
-  await enviar('Page.navigate', { url: `file://${join(RAIZ, 'index.html')}` });
+  await enviar('Page.navigate', { url: pathToFileURL(join(RAIZ, 'index.html')).href });
   await dormir(1000);
   await esperar(
     `document.getElementById('load-error') && !document.getElementById('load-error').classList.contains('hidden')`,
@@ -235,7 +250,12 @@ try {
   try {
     process.kill(chrome.pid);
   } catch {}
-  rmSync(PERFIL, { recursive: true, force: true });
+  try {
+    rmSync(PERFIL, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+  } catch {
+    // En Windows Chrome a veces deja bloqueado CrashpadMetrics-active.pma.
+    // El perfil es temporal y el sistema lo limpia; no vale la pena fallar por eso.
+  }
 }
 
 console.log(`\nCapturas guardadas en docs/capturas/`);

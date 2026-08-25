@@ -69,6 +69,10 @@ const el = {
   weakTopics: document.getElementById('weak-topics'),
   weakTopicsList: document.getElementById('weak-topics-list'),
   loadError: document.getElementById('load-error'),
+  recsDialog: document.getElementById('recs-dialog'),
+  recsOpenBtn: document.getElementById('recs-open-btn'),
+  recsCloseBtn: document.getElementById('recs-close-btn'),
+  recsDoneBtn: document.getElementById('recs-done-btn'),
 };
 
 // Catálogo de guías de repaso, indexado por identificador de tema.
@@ -101,6 +105,52 @@ export function mostrarErrorDeCarga(mensaje) {
   el.loadError.textContent = mensaje;
   el.loadError.classList.remove('hidden');
   el.startBtn.disabled = true;
+}
+
+// Modal de recomendaciones para el examen oficial. Usa <dialog> nativo, así que
+// el foco atrapado y el cierre con Escape los aporta el navegador. Se conecta
+// antes de cargar los datos, porque su contenido es útil aunque el banco falle.
+export function conectarRecomendaciones() {
+  const dialogo = el.recsDialog;
+  if (!dialogo || typeof dialogo.showModal !== 'function') {
+    el.recsOpenBtn?.classList.add('hidden');
+    return;
+  }
+
+  const abrir = () => {
+    if (!dialogo.open) dialogo.showModal();
+  };
+  const cerrar = () => {
+    if (dialogo.open) dialogo.close();
+  };
+
+  el.recsOpenBtn.addEventListener('click', abrir);
+  el.recsCloseBtn.addEventListener('click', cerrar);
+  el.recsDoneBtn.addEventListener('click', cerrar);
+
+  // Clic fuera de la tarjeta: el evento apunta al propio <dialog>, que ocupa
+  // solo la caja del modal, así que basta comparar con sus límites.
+  dialogo.addEventListener('click', (evento) => {
+    if (evento.target !== dialogo) return;
+
+    const caja = dialogo.getBoundingClientRect();
+    const dentro =
+      evento.clientY >= caja.top &&
+      evento.clientY <= caja.bottom &&
+      evento.clientX >= caja.left &&
+      evento.clientX <= caja.right;
+
+    if (!dentro) cerrar();
+  });
+
+  // Evita que el fondo se desplace mientras el modal está abierto.
+  dialogo.addEventListener('close', () => {
+    document.body.classList.remove('overflow-hidden');
+    el.recsOpenBtn.focus();
+  });
+  el.recsOpenBtn.addEventListener('click', () => {
+    document.body.classList.add('overflow-hidden');
+  });
 }
 
 export function mostrarPantalla(nombre) {

@@ -29,6 +29,38 @@ details[open] .guia-chevron {
   transform: rotate(180deg);
 }
 
+.recs-dialog {
+  width: calc(100% - 2rem);
+  max-width: 36rem;
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.recs-dialog::backdrop {
+  background: rgb(7 7 7 / 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.recs-dialog[open] {
+  animation: fadeIn 0.28s ease-out;
+}
+
+.recs-dialog[open]::backdrop {
+  animation: recsBackdrop 0.28s ease-out;
+}
+
+@keyframes recsBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -49,7 +81,9 @@ details[open] .guia-chevron {
     scroll-behavior: auto;
   }
 
-  .animate-fadeIn {
+  .animate-fadeIn,
+  .recs-dialog[open],
+  .recs-dialog[open]::backdrop {
     animation: none;
   }
 }

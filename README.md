@@ -58,6 +58,14 @@ Abre <http://localhost:8000>. No hace falta `npm install`: el proyecto no tiene 
 
 ## Capturas
 
+**Recomendaciones para el examen oficial.** En la bienvenida, un botón abre un modal con las
+condiciones del entorno supervisado: vídeo 360° del lugar, cámara, monitores, dispositivos y
+escritorio.
+
+![Botón de recomendaciones en la pantalla de bienvenida](docs/capturas/07-recomendaciones-boton.png)
+
+![Modal con las recomendaciones del examen oficial](docs/capturas/08-recomendaciones-modal.png)
+
 **Durante el examen.** Una pregunta a la vez, con barra de progreso, contador de respondidas y
 navegación hacia atrás para corregir antes de finalizar.
 
@@ -93,6 +101,8 @@ headless y recorta cada zona. No están hechas a mano, así que no se quedan des
 - **Recomendaciones de estudio** bajo cada pregunta fallada, con los puntos concretos a repasar y
   enlaces a las OWASP Cheat Sheets del tema.
 - **Resumen de temas flojos** que ordena las áreas con más fallos para orientar el repaso.
+- **Recomendaciones para el examen oficial** en un modal accesible desde la bienvenida, con las
+  condiciones del entorno supervisado (vídeo 360° del lugar, monitores, cámara, dispositivos y escritorio).
 - **Interfaz responsive** en modo oscuro con la identidad visual de Babel.
 - **Versión de archivo único** que se abre con doble clic y se puede compartir por correo.
 - **Suite de pruebas** sobre la lógica del examen y la integridad de los datos.
@@ -107,6 +117,14 @@ tanto las preguntas como el orden de las opciones. Aprobar aquí de forma consta
 por suerte, es la mejor señal de que el resultado en la certificación se va a parecer al que se
 obtiene en el simulador. La pantalla de resultados repite ese recordatorio en corto, junto al botón
 de reinicio.
+
+Justo encima de *Iniciar Examen* hay un botón que abre un modal con las **recomendaciones para el
+examen oficial**: qué exige el entorno supervisado por IA (vídeo 360° del lugar, monitores
+adicionales retirados, rostro en el encuadre, sin terceros, una sola pestaña, sin atajos de copiado
+ni capturas, notificaciones apagadas, dispositivos guardados y escritorio despejado). Es contenido
+estático dentro de
+`index.html`; el modal usa el elemento `<dialog>` nativo, así que se cierra con <kbd>Esc</kbd>, con
+un clic fuera o con el botón *Entendido*, y el foco vuelve al botón que lo abrió.
 
 ## Temario cubierto
 

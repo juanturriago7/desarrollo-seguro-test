@@ -37,6 +37,10 @@ async function inicializar() {
   window.__simuladorIniciado = true;
   ui.habilitarInicio(false);
 
+  // Se conecta antes de cargar los datos: las recomendaciones del examen oficial
+  // siguen siendo útiles aunque el banco de preguntas no llegue.
+  ui.conectarRecomendaciones();
+
   try {
     const datos = await cargarDatos();
     banco = datos.banco;
