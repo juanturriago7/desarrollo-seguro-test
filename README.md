@@ -14,6 +14,10 @@ servirlo por HTTP. Toda la lógica son unos 700 renglones de JavaScript vanilla 
 
 ## Inicio rápido
 
+Para practicar, entra aquí: **<https://desarrollosegurotest.netlify.app/>**
+
+Si quieres correrlo en local:
+
 ```bash
 git clone <url-del-repositorio>
 cd DesarrolloSeguroTest
