@@ -37,6 +37,20 @@ details[open] .guia-chevron {
   border: none;
   background: transparent;
   color: inherit;
+  /* Chrome le calcula al <dialog> un área desplazable con el alto completo de la
+     lista, aunque .recs-card ya la recorte. Sumado al overflow:auto que trae de
+     serie, la rueda del ratón sacaba el modal entero de la pantalla y dejaba el
+     título y la X fuera de alcance. El desplazamiento debe vivir solo en la
+     lista, así que aquí se anula: clip ni siquiera admite hacerlo por foco. */
+  overflow: hidden;
+  overflow: clip;
+}
+
+/* La primera declaración es el respaldo para navegadores sin dvh, donde la barra
+   de direcciones del móvil no descuenta de vh y el modal se pasaría de largo. */
+.recs-card {
+  max-height: min(40rem, calc(100vh - 2rem));
+  max-height: min(40rem, calc(100dvh - 2rem));
 }
 
 .recs-dialog::backdrop {

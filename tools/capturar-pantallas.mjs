@@ -149,22 +149,42 @@ try {
 
   await esperar(`document.readyState === 'complete'`, 'que la página cargue');
   await esperar(
-    `document.getElementById('start-btn') && !document.getElementById('start-btn').disabled`,
-    'que la aplicación habilite el botón de inicio'
+    `document.querySelectorAll('#recs-list input').length > 0`,
+    'que se construya el checklist de requisitos'
   );
 
   console.log('Capturando pantallas:');
   await capturar('01-bienvenida.png', ['#welcome-screen']);
-  await capturar('07-recomendaciones-boton.png', ['#recs-open-btn', '#start-btn'], {
+  await capturar('07-requisitos-boton.png', ['#recs-open-btn', '#start-hint'], {
     arriba: 16,
     abajo: 16,
   });
 
+  // El modal se fotografía a medio marcar: así se ve tanto la casilla vacía como
+  // la marcada, y la barra de progreso con un valor intermedio.
   await evaluar(`document.getElementById('recs-open-btn').click(); true`);
   await dormir(400);
-  await capturar('08-recomendaciones-modal.png', ['#recs-dialog'], { arriba: 8, abajo: 8 });
-  await evaluar(`document.getElementById('recs-dialog').close(); true`);
-  await dormir(200);
+  await evaluar(
+    `(() => { [...document.querySelectorAll('#recs-list input')].slice(0, 3)
+       .forEach((c) => { c.checked = true; c.dispatchEvent(new Event('change', { bubbles: true })); });
+       return true; })()`
+  );
+  await dormir(250);
+  await capturar('08-requisitos-checklist.png', ['#recs-dialog'], { arriba: 8, abajo: 8 });
+
+  // El resto del recorrido necesita el simulador habilitado, así que se completa
+  // y confirma el checklist igual que haría una persona.
+  await evaluar(
+    `(() => { document.querySelectorAll('#recs-list input')
+       .forEach((c) => { c.checked = true; c.dispatchEvent(new Event('change', { bubbles: true })); });
+       document.getElementById('recs-done-btn').click();
+       return true; })()`
+  );
+  await dormir(300);
+  await esperar(
+    `!document.getElementById('start-btn').disabled`,
+    'que confirmar los requisitos habilite el inicio'
+  );
 
   // El banco se inyecta en la página para poder responder de forma determinista.
   const banco = readFileSync(join(RAIZ, 'data', 'preguntas.json'), 'utf8');

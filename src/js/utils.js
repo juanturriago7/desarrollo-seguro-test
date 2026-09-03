@@ -23,7 +23,8 @@ export function animarNumero(elemento, desde, hasta, duracion) {
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
-// Crea un icono SVG de trazo a partir del atributo "d" de su path.
+// Crea un icono SVG de trazo a partir del atributo "d" de su path. Admite varios
+// trazos pasando un array, porque algunos iconos se dibujan con más de un path.
 export function crearIcono(d, clases) {
   const svg = document.createElementNS(SVG_NS, 'svg');
   svg.setAttribute('viewBox', '0 0 24 24');
@@ -34,9 +35,11 @@ export function crearIcono(d, clases) {
   svg.setAttribute('stroke-linejoin', 'round');
   svg.setAttribute('class', clases);
 
-  const path = document.createElementNS(SVG_NS, 'path');
-  path.setAttribute('d', d);
-  svg.appendChild(path);
+  for (const trazo of Array.isArray(d) ? d : [d]) {
+    const path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('d', trazo);
+    svg.appendChild(path);
+  }
 
   return svg;
 }

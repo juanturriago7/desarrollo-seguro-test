@@ -62,13 +62,12 @@ Abre <http://localhost:8000>. No hace falta `npm install`: el proyecto no tiene 
 
 ## Capturas
 
-**Recomendaciones para el examen oficial.** En la bienvenida, un botón abre un modal con las
-condiciones del entorno supervisado: vídeo 360° del lugar, cámara, monitores, dispositivos y
-escritorio.
+**Requisitos del examen oficial.** El simulador arranca bloqueado. Para habilitarlo hay que abrir
+el checklist y marcar los once requisitos del entorno supervisado, uno a uno.
 
-![Botón de recomendaciones en la pantalla de bienvenida](docs/capturas/07-recomendaciones-boton.png)
+![Botón de requisitos y botón de inicio bloqueado](docs/capturas/07-requisitos-boton.png)
 
-![Modal con las recomendaciones del examen oficial](docs/capturas/08-recomendaciones-modal.png)
+![Checklist de requisitos del examen oficial a medio marcar](docs/capturas/08-requisitos-checklist.png)
 
 **Durante el examen.** Una pregunta a la vez, con barra de progreso, contador de respondidas y
 navegación hacia atrás para corregir antes de finalizar.
@@ -105,8 +104,8 @@ headless y recorta cada zona. No están hechas a mano, así que no se quedan des
 - **Recomendaciones de estudio** bajo cada pregunta fallada, con los puntos concretos a repasar y
   enlaces a las OWASP Cheat Sheets del tema.
 - **Resumen de temas flojos** que ordena las áreas con más fallos para orientar el repaso.
-- **Recomendaciones para el examen oficial** en un modal accesible desde la bienvenida, con las
-  condiciones del entorno supervisado (vídeo 360° del lugar, monitores, cámara, dispositivos y escritorio).
+- **Checklist obligatorio de requisitos del examen oficial**: el botón de inicio permanece
+  bloqueado hasta que se marcan los once puntos del entorno supervisado.
 - **Interfaz responsive** en modo oscuro con la identidad visual de Babel.
 - **Versión de archivo único** que se abre con doble clic y se puede compartir por correo.
 - **Suite de pruebas** sobre la lógica del examen y la integridad de los datos.
@@ -122,13 +121,29 @@ por suerte, es la mejor señal de que el resultado en la certificación se va a 
 obtiene en el simulador. La pantalla de resultados repite ese recordatorio en corto, junto al botón
 de reinicio.
 
-Justo encima de *Iniciar Examen* hay un botón que abre un modal con las **recomendaciones para el
-examen oficial**: qué exige el entorno supervisado por IA (vídeo 360° del lugar, monitores
-adicionales retirados, rostro en el encuadre, sin terceros, una sola pestaña, sin atajos de copiado
-ni capturas, notificaciones apagadas, dispositivos guardados y escritorio despejado). Es contenido
-estático dentro de
-`index.html`; el modal usa el elemento `<dialog>` nativo, así que se cierra con <kbd>Esc</kbd>, con
-un clic fuera o con el botón *Entendido*, y el foco vuelve al botón que lo abrió.
+### Requisitos del examen oficial
+
+Se han anulado exámenes por incumplir las normas del entorno supervisado, así que el simulador las
+usa como puerta de entrada: **el botón *Iniciar Examen* nace bloqueado**. Encima hay un botón que
+abre un checklist con los once requisitos —vídeo 360° del lugar, estar solo en la habitación, sin
+gorra, capucha, audífonos ni lentes oscuros, sin monitores adicionales, rostro en el encuadre,
+permanencia, una sola pestaña, sin atajos de copiado ni capturas, notificaciones apagadas,
+dispositivos guardados y escritorio despejado— y hasta que no se marcan todos no se habilita el
+simulador. La idea no es validar nada, que sería imposible desde el navegador, sino **obligar a
+leerlos uno a uno** antes de practicar.
+
+La lista vive en la constante `REQUISITOS` de `src/js/ui.js` y las filas se construyen con
+`createElement`, igual que el resto de la interfaz. Añadir o quitar un requisito es editar ese
+array: el contador y la barra de progreso se ajustan solos.
+
+El modal usa el elemento `<dialog>` nativo, así que el foco atrapado y el cierre con <kbd>Esc</kbd>
+los aporta el navegador. Cerrarlo sin completar el checklist **no** confirma nada, pero las marcas
+se conservan al reabrirlo. La confirmación no se persiste: recargar la página vuelve a exigirla.
+
+Como refuerzo, pasar el cursor —o el foco del teclado— sobre *Iniciar Examen* levanta un aviso
+flotante que recuerda revisar los requisitos. El hover se escucha en el contenedor y no en el botón,
+porque los botones deshabilitados no reciben eventos de ratón y el recordatorio hace falta
+precisamente mientras el simulador sigue bloqueado.
 
 ## Temario cubierto
 

@@ -22,6 +22,84 @@ const ESTILOS_RESULTADO = {
   },
 };
 
+// Requisitos del examen oficial supervisado. El usuario debe marcarlos uno a uno
+// antes de poder iniciar el simulador: es la lista por la que más pruebas se anulan.
+const REQUISITOS = [
+  {
+    titulo: 'Vídeo 360° del lugar',
+    detalle:
+      'Antes del examen te harán grabar un vídeo 360 grados del lugar donde estarás presentando el examen. Ese vídeo debe cumplir con los estándares mencionados.',
+    icono:
+      'M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z',
+  },
+  {
+    titulo: 'Solo en la habitación',
+    detalle:
+      'Debes estar completamente solo en la habitación y sin ruidos de fondo. La IA detecta voces y rostros de terceros, aunque solo pasen por detrás.',
+    icono:
+      'M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z',
+  },
+  {
+    titulo: 'Sin gorra, capucha, audífonos ni lentes oscuros',
+    detalle:
+      'Nada puede cubrir tu cabeza, tus oídos ni tus ojos. Quítate la gorra, baja la capucha, retira los audífonos y no uses lentes oscuros.',
+    icono:
+      'M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636',
+  },
+  {
+    titulo: 'Monitores adicionales (incluso apagados)',
+    detalle:
+      'Retira físicamente cualquier pantalla o monitor extra de tu escritorio. Aunque estén apagados, si llegas a mirar hacia esa pantalla un solo segundo, el sistema lo detectará y te cancelará la prueba.',
+    icono:
+      'M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25',
+  },
+  {
+    titulo: 'Cámara y mirada',
+    detalle:
+      'Mantén tu rostro siempre dentro del encuadre, bien iluminado y sin mirar hacia los lados o hacia abajo.',
+    icono: [
+      'M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z',
+      'M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z',
+    ],
+  },
+  {
+    titulo: 'Permanencia',
+    detalle: 'No te levantes ni te alejes de la pantalla hasta terminar.',
+    icono: 'M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    titulo: 'Navegación',
+    detalle:
+      'Utiliza únicamente la pestaña del examen. No abras otras páginas, aplicaciones ni ventanas.',
+    icono:
+      'M3 8.25V18a2.25 2.25 0 002.25 2.25h13.5A2.25 2.25 0 0021 18V8.25m-18 0V6a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 6v2.25m-18 0h18M5.25 12h.008v.008H5.25V12z',
+  },
+  {
+    titulo: 'Restricciones de teclado',
+    detalle: 'No uses atajos para copiar, pegar ni hacer capturas de pantalla.',
+    icono:
+      'M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75',
+  },
+  {
+    titulo: 'Notificaciones',
+    detalle: 'Desactiva alertas emergentes (WhatsApp, correo, Slack).',
+    icono:
+      'M9.143 17.082a24.248 24.248 0 003.844.148m-3.844-.148a23.852 23.852 0 01-5.455-1.31 8.964 8.964 0 002.3-5.542m3.155 6.852a3 3 0 005.667 1.97m1.965-2.277L21 21m-4.225-4.225a23.81 23.81 0 003.536-1.003A8.967 8.967 0 0018 9.75V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 01-5.667 1.97',
+  },
+  {
+    titulo: 'Dispositivos',
+    detalle: 'Guarda tu celular, tableta y reloj inteligente.',
+    icono:
+      'M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3',
+  },
+  {
+    titulo: 'Escritorio limpio',
+    detalle: 'Retira cualquier apunte, libro o material de tu lugar de trabajo.',
+    icono:
+      'M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 6v3.776',
+  },
+];
+
 const ESTILOS_RESPUESTA = {
   incorrecta: {
     etiqueta: 'Tu respuesta',
@@ -73,6 +151,12 @@ const el = {
   recsOpenBtn: document.getElementById('recs-open-btn'),
   recsCloseBtn: document.getElementById('recs-close-btn'),
   recsDoneBtn: document.getElementById('recs-done-btn'),
+  recsList: document.getElementById('recs-list'),
+  recsProgress: document.getElementById('recs-progress'),
+  recsProgressBar: document.getElementById('recs-progress-bar'),
+  recsBadge: document.getElementById('recs-badge'),
+  recsOpenHint: document.getElementById('recs-open-hint'),
+  startHint: document.getElementById('start-hint'),
 };
 
 // Catálogo de guías de repaso, indexado por identificador de tema.
@@ -97,28 +181,62 @@ export function mostrarTamanoBanco(total) {
   });
 }
 
+// El botón de inicio depende de dos condiciones independientes: que el banco
+// haya cargado y que el usuario haya confirmado los requisitos del examen.
+let datosListos = false;
+let requisitosConfirmados = false;
+
+function actualizarInicio() {
+  el.startBtn.disabled = !(datosListos && requisitosConfirmados);
+  el.startHint.classList.toggle('hidden', requisitosConfirmados);
+}
+
 export function habilitarInicio(habilitado) {
-  el.startBtn.disabled = !habilitado;
+  datosListos = habilitado;
+  actualizarInicio();
 }
 
 export function mostrarErrorDeCarga(mensaje) {
   el.loadError.textContent = mensaje;
   el.loadError.classList.remove('hidden');
-  el.startBtn.disabled = true;
+  datosListos = false;
+  actualizarInicio();
 }
 
-// Modal de recomendaciones para el examen oficial. Usa <dialog> nativo, así que
-// el foco atrapado y el cierre con Escape los aporta el navegador. Se conecta
-// antes de cargar los datos, porque su contenido es útil aunque el banco falle.
+// Checklist de requisitos del examen oficial. Usa <dialog> nativo, así que el
+// foco atrapado y el cierre con Escape los aporta el navegador. Se conecta antes
+// de cargar los datos, porque su contenido es útil aunque el banco falle.
 export function conectarRecomendaciones() {
   const dialogo = el.recsDialog;
+
+  // Sin <dialog> no hay forma de mostrar la lista, y dejar el simulador
+  // bloqueado para siempre sería peor que no exigir la confirmación.
   if (!dialogo || typeof dialogo.showModal !== 'function') {
     el.recsOpenBtn?.classList.add('hidden');
+    requisitosConfirmados = true;
+    actualizarInicio();
     return;
   }
 
+  const casillas = REQUISITOS.map(crearRequisito);
+  el.recsList.replaceChildren(...casillas.map((c) => c.closest('li')));
+
+  const refrescarProgreso = () => {
+    const marcados = casillas.filter((c) => c.checked).length;
+    const total = casillas.length;
+
+    el.recsProgress.textContent = `${marcados}/${total}`;
+    el.recsProgressBar.style.width = `${(marcados / total) * 100}%`;
+    el.recsDoneBtn.disabled = marcados < total;
+  };
+
+  casillas.forEach((casilla) => casilla.addEventListener('change', refrescarProgreso));
+  refrescarProgreso();
+
   const abrir = () => {
-    if (!dialogo.open) dialogo.showModal();
+    if (dialogo.open) return;
+    document.body.classList.add('overflow-hidden');
+    dialogo.showModal();
   };
   const cerrar = () => {
     if (dialogo.open) dialogo.close();
@@ -126,7 +244,13 @@ export function conectarRecomendaciones() {
 
   el.recsOpenBtn.addEventListener('click', abrir);
   el.recsCloseBtn.addEventListener('click', cerrar);
-  el.recsDoneBtn.addEventListener('click', cerrar);
+
+  el.recsDoneBtn.addEventListener('click', () => {
+    requisitosConfirmados = true;
+    marcarBotonConfirmado();
+    actualizarInicio();
+    cerrar();
+  });
 
   // Clic fuera de la tarjeta: el evento apunta al propio <dialog>, que ocupa
   // solo la caja del modal, así que basta comparar con sus límites.
@@ -148,9 +272,53 @@ export function conectarRecomendaciones() {
     document.body.classList.remove('overflow-hidden');
     el.recsOpenBtn.focus();
   });
-  el.recsOpenBtn.addEventListener('click', () => {
-    document.body.classList.add('overflow-hidden');
-  });
+}
+
+function marcarBotonConfirmado() {
+  el.recsBadge.className =
+    'flex-none rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-400';
+  el.recsBadge.textContent = 'Confirmado';
+  el.recsOpenHint.textContent = 'Puedes volver a consultarlos cuando quieras';
+}
+
+/** Construye una fila del checklist y devuelve su casilla. */
+function crearRequisito({ titulo, detalle, icono }) {
+  const item = document.createElement('li');
+
+  const etiqueta = document.createElement('label');
+  etiqueta.className =
+    'flex cursor-pointer gap-3 rounded-xl border border-babel-line bg-babel-carbon/40 p-3 transition-colors hover:border-babel-steel has-[:checked]:border-babel-orange/45 has-[:checked]:bg-babel-orange/[0.07]';
+
+  const casilla = document.createElement('input');
+  casilla.type = 'checkbox';
+  casilla.className = 'peer sr-only';
+
+  const marca = document.createElement('span');
+  marca.className =
+    'mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-md border-2 border-babel-steel text-transparent transition-colors peer-checked:border-babel-orange peer-checked:bg-babel-orange peer-checked:text-babel-ink peer-focus-visible:ring-2 peer-focus-visible:ring-babel-orange peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-babel-carbon';
+  marca.append(crearIcono('M4.5 12.75l6 6 9-13.5', 'h-4 w-4'));
+
+  const marco = document.createElement('span');
+  marco.className =
+    'mt-0.5 flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-babel-orange/10 text-babel-orange';
+  marco.append(crearIcono(icono, 'h-4 w-4'));
+
+  const texto = document.createElement('span');
+  texto.className = 'min-w-0 flex-1';
+
+  const nombre = document.createElement('span');
+  nombre.className = 'block text-sm font-semibold text-white';
+  nombre.textContent = titulo;
+
+  const descripcion = document.createElement('span');
+  descripcion.className = 'mt-1 block text-sm leading-relaxed text-babel-ash';
+  descripcion.textContent = detalle;
+
+  texto.append(nombre, descripcion);
+  etiqueta.append(casilla, marca, marco, texto);
+  item.append(etiqueta);
+
+  return casilla;
 }
 
 export function mostrarPantalla(nombre) {
